@@ -1,463 +1,307 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="D_Pict Portofolio">
-    <meta name="keywords" content="D_Pict, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>D_Pict | Portofolio</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
-    <link rel="stylesheet" href="css/nowfont.css" type="text/css">
-    <link rel="stylesheet" href="css/rockville.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>D_Pict Portfolio - Klaudius Oe Naimnou</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        accentBlue: '#2563eb',
+                        deepBlue: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome untuk ikon sosial media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-accentBlue selection:text-white">
 
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-10 col-md-10">
-                    <div class="header__nav">
-                        <nav class="header__menu mobile-menu">
-                            <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="./about.html">About</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <div class="header__right__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-wider text-white">D_PICT<span class="text-accentBlue">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#beranda" class="hover:text-accentBlue transition">Beranda</a>
+                <a href="#tentang" class="hover:text-accentBlue transition">Tentang</a>
+                <a href="#skills" class="hover:text-accentBlue transition">Hard Skills</a>
+                <a href="#project" class="hover:text-accentBlue transition">Project</a>
+                <a href="#galeri" class="hover:text-accentBlue transition">Galeri Foto</a>
+                <a href="#video" class="hover:text-accentBlue transition">Video Tugas</a>
+                <a href="#sertifikasi" class="hover:text-accentBlue transition">Sertifikasi</a>
+                <a href="#pengalaman" class="hover:text-accentBlue transition">Pengalaman</a>
             </div>
-            <div id="mobile-menu-wrap"></div>
+            <a href="#kontak" class="hidden md:inline-block px-5 py-2.5 rounded-full bg-accentBlue text-white font-medium hover:bg-deepBlue transition shadow-lg shadow-accentBlue/30">Hubungi Saya</a>
         </div>
-    </header>
-    <!-- Header Section End -->
+    </nav>
 
-    <!-- Hero Section Begin -->
-    <section class="hero spad set-bg" data-setbg="img/hero-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="hero__text">
-                        <span>Mahasiswa LP3I Jakarta</span>
-                        <h1>Klaudius Oe Naimnou</h1>
-                        <a href="https://www.youtube.com/watch?v=oKOVpGQxusU" class="play-btn video-popup"><i class="fa fa-play"></i></a>
-                    </div>
-                </div>
+    <!-- 1 & 2. BERANDA SECTION -->
+    <section id="beranda" class="pt-32 pb-20 md:pt-44 md:pb-32 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 space-y-6 text-center md:text-left">
+            <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-accentBlue/10 text-accentBlue border border-accentBlue/20">Mahasiswa Manajemen Informatika</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                Halo, Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentBlue to-blue-400">Klaudius Oe Naimnou</span>
+            </h1>
+            <p class="text-gray-400 text-lg leading-relaxed">
+                Mahasiswa Manajemen Informatika di <strong class="text-white">LP3I Jakarta Pusat</strong> (Kampus Utama). Berfokus pada pengembangan web modern, manajemen basis data, dan karya fotografi kreatif.
+            </p>
+            <div class="flex justify-center md:justify-start gap-4 pt-4">
+                <a href="#project" class="px-7.5 py-3.5 rounded-xl bg-accentBlue font-semibold text-white hover:bg-deepBlue transition shadow-lg shadow-accentBlue/30">Lihat Project</a>
+                <a href="#kontak" class="px-7.5 py-3.5 rounded-xl bg-cardBg border border-gray-700 font-semibold text-gray-200 hover:border-accentBlue transition">Kontak Saya</a>
             </div>
         </div>
-        <div class="linear__icon">
-            <i class="fa fa-angle-double-down"></i>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-
-<!-- Event Section Begin -->
-<section class="event spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>UPhotographic Images</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="event__slider owl-carousel">
-                
-                <!-- Item 1: Cileungsir -->
-                <div class="col-lg-4">
-                    <div class="event__item" style="display: flex; flex-direction: column; height: 460px;">
-                        <div class="event__item__pic set-bg" data-setbg="img/events/cilengsi.jpg" style="height: 270px; background-size: cover; background-position: center; flex-shrink: 0;">
-                            <div class="tag-date">
-                                <a href="detail-foto.html?id=cileungsir" style="color: #ffffff;"><span>detail...</span></a>
-                            </div>
-                        </div>
-                        <div class="event__item__text" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                            <h4>Serenity of Cileungsir</h4>
-                            <p><i class="fa fa-map-marker"></i>Bogor, Provinsi Jawa Barat</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2: Jakarta / A Dawn Panorama -->
-                <div class="col-lg-4">
-                    <div class="event__item" style="display: flex; flex-direction: column; height: 460px;">
-                        <div class="event__item__pic set-bg" data-setbg="img/events/jakarta.jpg" style="height: 270px; background-size: cover; background-position: center; flex-shrink: 0;">
-                            <div class="tag-date">
-                                <a href="detail-foto.html?id=jakarta" style="color: #ffffff;"><span>detail...</span></a>
-                            </div>
-                        </div>
-                        <div class="event__item__text" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                            <h4>A Dawn Panorama</h4>
-                            <p><i class="fa fa-map-marker"></i> Jalan Kramat Raya hingga Jalan Salemba Raya, Jakarta Pusat</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3: Menteng / Arjuna Wiwaha -->
-                <div class="col-lg-4">
-                    <div class="event__item" style="display: flex; flex-direction: column; height: 460px;">
-                        <div class="event__item__pic set-bg" data-setbg="img/events/menteng.jpg" style="height: 270px; background-size: cover; background-position: center; flex-shrink: 0;">
-                            <div class="tag-date">
-                                <a href="detail-foto.html?id=menteng" style="color: #ffffff;"><span>detail...</span></a>
-                            </div>
-                        </div>
-                        <div class="event__item__text" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                            <h4>Arjuna Wiwaha from the Ground Up</h4>
-                            <p><i class="fa fa-map-marker"></i> kawasan Menteng, Jakarta Pusat, DKI Jakarta</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4: Bundaran HI -->
-                <div class="col-lg-4">
-                    <div class="event__item" style="display: flex; flex-direction: column; height: 460px;">
-                        <div class="event__item__pic set-bg" data-setbg="img/events/bundaranhi.jpeg" style="height: 270px; background-size: cover; background-position: center; flex-shrink: 0;">
-                            <div class="tag-date">
-                                <a href="detail-foto.html?id=bundaranhi" style="color: #ffffff;"><span>detail...</span></a>
-                            </div>
-                        </div>
-                        <div class="event__item__text" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                            <h4>The Rhythm of the Transit Hub</h4>
-                            <p><i class="fa fa-map-marker"></i> peron Halte Transjakarta Bundaran HI, Jakarta Pusat</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Event Section End -->
-
-<!-- About Section Begin -->
-    <section class="about spad" id="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about__pic">
-                        <img src="img/about/about.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about__text">
-                        <div class="section-title">
-                            <h2>Klaudius Oe Naimnou</h2>
-                            <h1>About me</h1>
-                        </div>
-                        <p>Mahasiswa Manajemen Informatika dengan fokus pengembangan web. Memiliki antusiasme tinggi dalam membangun antarmuka web menggunakan HTML5 dan CSS3, serta tengah mendalami pengembangan back-end berbasis PHP, CodeIgniter 4, dan manajemen basis data MySQL. Berkomitmen untuk terus mengasah kemampuan teknis dan berkontribusi secara optimal dalam tim.</p>
-                        <a href="about.html#about-me" class="primary-btn">DETAIL ME</a>
-                    </div>
+        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+            <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden border-2 border-accentBlue/30 shadow-2xl shadow-accentBlue/20 bg-cardBg flex items-center justify-center">
+                <!-- Placeholder Avatar / Logo Kampus Utama LP3I -->
+                <div class="text-center p-6">
+                    <i class="fa-solid fa-graduation-cap text-6xl text-accentBlue mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">LP3I Jakarta Pusat</h3>
+                    <p class="text-sm text-gray-400 mt-1">Kampus Utama - Pusat Pengembangan Karier & Vokasi</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About Section End -->
 
-    <!-- Services Section Begin -->
-    <section class="services">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 p-0">
-                    <div class="services__left set-bg" data-setbg="img/services/service-left.jpg">
-                        <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="play-btn"><i class="fa fa-play"></i></a>
+    <!-- 3. TENTANG / KAMPUS UTAMA DETAIL -->
+    <section id="tentang" class="py-20 bg-cardBg/50 border-y border-gray-800/60 px-6">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <h2 class="text-3xl font-bold">Tentang <span class="text-accentBlue">D_Pict Portfolio</span></h2>
+            <p class="text-gray-300 leading-relaxed text-base md:text-lg">
+                D_Pict Portfolio adalah platform web personal yang menampilkan karya kreatif, galeri fotografi, serta proyek pengembangan web. Sebagai mahasiswa aktif di <strong class="text-white">LP3I Jakarta Pusat (Kampus Utama)</strong>, lembaga pendidikan tinggi vokasi terkemuka yang dikenal dengan garansi penempatan kerja, saya terus mengasah keahlian teknis dalam bidang pemrograman, basis data, dan media visual.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. HARD SKILLS SECTION -->
+    <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center space-y-3 mb-16">
+            <h2 class="text-3xl font-bold">Keahlian Profesional (<span class="text-accentBlue">Hard Skills</span>)</h2>
+            <p class="text-gray-400">Teknologi dan perangkat yang saya kuasai dalam pengembangan sistem</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Skill Card 1 -->
+            <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 hover:border-accentBlue/50 transition group">
+                <div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mb-4 text-2xl group-hover:scale-110 transition">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-1">HTML5 & CSS3</h3>
+                <p class="text-sm text-gray-400">Desain antarmuka web responsif dan semantik modern.</p>
+            </div>
+            <!-- Skill Card 2 -->
+            <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 hover:border-accentBlue/50 transition group">
+                <div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mb-4 text-2xl group-hover:scale-110 transition">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-1">PHP & CodeIgniter 4</h3>
+                <p class="text-sm text-gray-400">Pengembangan aplikasi web dinamis berbasis backend.</p>
+            </div>
+            <!-- Skill Card 3 -->
+            <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 hover:border-accentBlue/50 transition group">
+                <div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mb-4 text-2xl group-hover:scale-110 transition">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-1">MySQL Database</h3>
+                <p class="text-sm text-gray-400">Manajemen basis data, query, dan normalisasi tabel.</p>
+            </div>
+            <!-- Skill Card 4 -->
+            <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 hover:border-accentBlue/50 transition group">
+                <div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mb-4 text-2xl group-hover:scale-110 transition">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Photography & Editing</h3>
+                <p class="text-sm text-gray-400">Komposisi visual, galeri fotografi, dan olah digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. WEBSITE PROJECT SECTION -->
+    <section id="project" class="py-24 bg-cardBg/30 px-6 border-y border-gray-800/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <h2 class="text-3xl font-bold">Featured <span class="text-accentBlue">Web Projects</span></h2>
+                <p class="text-gray-400">Beberapa portofolio proyek web yang telah saya rancang dan kembangkan</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project Item 1 -->
+                <div class="rounded-2xl bg-cardBg border border-gray-800 overflow-hidden hover:border-accentBlue transition flex flex-col">
+                    <div class="h-56 bg-gradient-to-r from-deepBlue to-accentBlue flex items-center justify-center text-white text-4xl font-black">
+                        D_Pict Web
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <h3 class="text-xl font-bold">D_Pict Portofolio Utama</h3>
+                        <p class="text-gray-400 text-sm flex-grow">Website portofolio pribadi interaktif yang menampilkan profil mahasiswa, galeri foto, serta dokumentasi tugas akademik.</p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-medium">HTML5</span>
+                            <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-medium">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-medium">JavaScript</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 p-0">
-                    <div class="row services__list">
-                        <div class="col-lg-6 p-0 order-lg-1 col-md-6 order-md-1">
-                            <div class="service__item deep-bg">
-                                <img src="img/services/service-1.png" alt="">
-                                <h4>Wedding</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-0 order-lg-2 col-md-6 order-md-2">
-                            <div class="service__item">
-                                <img src="img/services/service-2.png" alt="">
-                                <h4>Clubs and bar</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-0 order-lg-4 col-md-6 order-md-4">
-                            <div class="service__item deep-bg">
-                                <img src="img/services/service-4.png" alt="">
-                                <h4>DJ lessons</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 p-0 order-lg-3 col-md-6 order-md-3">
-                            <div class="service__item">
-                                <img src="img/services/service-3.png" alt="">
-                                <h4>Corporate events</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                            </div>
+                <!-- Project Item 2 -->
+                <div class="rounded-2xl bg-cardBg border border-gray-800 overflow-hidden hover:border-accentBlue transition flex flex-col">
+                    <div class="h-56 bg-gradient-to-r from-blue-900 to-deepBlue flex items-center justify-center text-white text-4xl font-black">
+                        CI4 System
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <h3 class="text-xl font-bold">Sistem Informasi Manajemen Data</h3>
+                        <p class="text-gray-400 text-sm flex-grow">Aplikasi web berbasis CodeIgniter 4 dan MySQL untuk pengelolaan data terintegrasi yang efisien dan aman.</p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-medium">PHP</span>
+                            <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-medium">CodeIgniter 4</span>
+                            <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-medium">MySQL</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Services Section End -->
 
-<!-- Skills Section Begin -->
-    <section class="track spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="section-title">
-                        <h2>Hard Skills</h2>
-                        <h1>Expertise</h1>
-                    </div>
+    <!-- 6. FOTOGRAFI GALERI SECTION -->
+    <section id="galeri" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center space-y-3 mb-16">
+            <h2 class="text-3xl font-bold">Galeri <span class="text-accentBlue">Fotografi</span></h2>
+            <p class="text-gray-400">Kumpulan karya visual dan galeri fotografi kreatif pilihan</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Galeri Foto 1 -->
+            <div class="group relative rounded-2xl overflow-hidden h-64 bg-cardBg border border-gray-800 flex items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                    <span class="text-white font-medium text-sm">Koleksi Estetik Portofolio 1</span>
                 </div>
-                <div class="col-lg-5">
-                    <div class="track__all">
-                        <a href="#" class="primary-btn border-btn">View all skills</a>
-                    </div>
-                </div>
+                <i class="fa-solid fa-image text-5xl text-gray-700 group-hover:scale-110 transition"></i>
             </div>
-            <div class="row">
-                <div class="col-lg-7 p-0">
-                    <div class="track__content nice-scroll" style="padding: 30px;">
-                        
-                        <!-- Skill Item: CodeIgniter 4 -->
-                        <div class="single_player_container" style="display: flex; align-items: center; margin-bottom: 25px;">
-                            <div style="font-size: 30px; color: #db00ff; margin-right: 20px; min-width: 40px; text-align: center;">
-                                <i class="fa fa-fire"></i>
-                            </div>
-                            <div>
-                                <h4 style="margin-bottom: 2px;">CodeIgniter 4</h4>
-                                <span style="color: #888; font-size: 14px;">PHP Framework</span>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item: PHP -->
-                        <div class="single_player_container" style="display: flex; align-items: center; margin-bottom: 25px;">
-                            <div style="font-size: 30px; color: #db00ff; margin-right: 20px; min-width: 40px; text-align: center;">
-                                <i class="fa fa-code"></i>
-                            </div>
-                            <div>
-                                <h4 style="margin-bottom: 2px;">PHP</h4>
-                                <span style="color: #888; font-size: 14px;">Backend Language</span>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item: HTML5 -->
-                        <div class="single_player_container" style="display: flex; align-items: center; margin-bottom: 25px;">
-                            <div style="font-size: 30px; color: #db00ff; margin-right: 20px; min-width: 40px; text-align: center;">
-                                <i class="fa fa-html5"></i>
-                            </div>
-                            <div>
-                                <h4 style="margin-bottom: 2px;">HTML5</h4>
-                                <span style="color: #888; font-size: 14px;">Markup Language</span>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item: MySQL -->
-                        <div class="single_player_container" style="display: flex; align-items: center; margin-bottom: 25px;">
-                            <div style="font-size: 30px; color: #db00ff; margin-right: 20px; min-width: 40px; text-align: center;">
-                                <i class="fa fa-database"></i>
-                            </div>
-                            <div>
-                                <h4 style="margin-bottom: 2px;">MySQL</h4>
-                                <span style="color: #888; font-size: 14px;">Database Management</span>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item: CSS3 -->
-                        <div class="single_player_container" style="display: flex; align-items: center; margin-bottom: 25px;">
-                            <div style="font-size: 30px; color: #db00ff; margin-right: 20px; min-width: 40px; text-align: center;">
-                                <i class="fa fa-css3"></i>
-                            </div>
-                            <div>
-                                <h4 style="margin-bottom: 2px;">CSS3</h4>
-                                <span style="color: #888; font-size: 14px;">Styling & Design</span>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item: AJAX -->
-                        <div class="single_player_container" style="display: flex; align-items: center; margin-bottom: 25px;">
-                            <div style="font-size: 30px; color: #db00ff; margin-right: 20px; min-width: 40px; text-align: center;">
-                                <i class="fa fa-bolt"></i>
-                            </div>
-                            <div>
-                                <h4 style="margin-bottom: 2px;">AJAX</h4>
-                                <span style="color: #888; font-size: 14px;">Asynchronous Requests</span>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item: Git -->
-                        <div class="single_player_container" style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <div style="font-size: 30px; color: #db00ff; margin-right: 20px; min-width: 40px; text-align: center;">
-                                <i class="fa fa-git"></i>
-                            </div>
-                            <div>
-                                <h4 style="margin-bottom: 2px;">Git</h4>
-                                <span style="color: #888; font-size: 14px;">Version Control</span>
-                            </div>
-                        </div>
-
-                    </div>
+            <!-- Galeri Foto 2 -->
+            <div class="group relative rounded-2xl overflow-hidden h-64 bg-cardBg border border-gray-800 flex items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                    <span class="text-white font-medium text-sm">Koleksi Estetik Portofolio 2</span>
                 </div>
-                <div class="col-lg-5 p-0 d-flex align-items-center">
-                    <div class="track__pic" style="width: 100%; height: 100%; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; max-height: 450px; object-fit: contain; display: block;">
-                            <source src="img/video-skills.mp4" type="video/mp4">
-                            Browser Anda tidak mendukung tag video.
-                        </video>
+                <i class="fa-solid fa-image text-5xl text-gray-700 group-hover:scale-110 transition"></i>
+            </div>
+            <!-- Galeri Foto 3 -->
+            <div class="group relative rounded-2xl overflow-hidden h-64 bg-cardBg border border-gray-800 flex items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-6">
+                    <span class="text-white font-medium text-sm">Koleksi Estetik Portofolio 3</span>
+                </div>
+                <i class="fa-solid fa-image text-5xl text-gray-700 group-hover:scale-110 transition"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. VIDEO PROJECT / TUGAS SECTION -->
+    <section id="video" class="py-24 bg-cardBg/30 px-6 border-y border-gray-800/60">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <h2 class="text-3xl font-bold">Video <span class="text-accentBlue">Project & Tugas</span></h2>
+                <p class="text-gray-400">Dokumentasi video presentasi dan hasil tugas akademik</p>
+            </div>
+            <div class="rounded-2xl bg-cardBg border border-gray-800 overflow-hidden shadow-2xl">
+                <div class="aspect-w-16 aspect-h-9 w-full bg-black/60 flex items-center justify-center p-12 min-h-[350px]">
+                    <div class="text-center space-y-4">
+                        <div class="w-16 h-16 rounded-full bg-accentBlue text-white flex items-center justify-center mx-auto text-2xl shadow-lg shadow-accentBlue/40 cursor-pointer hover:scale-110 transition">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                        <p class="text-gray-300 font-medium">Video Presentasi Tugas / Proyek D_Pict</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Skills Section End -->
 
-<!-- Youtube Section Begin -->
-    <section class="youtube spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Youtube feed</h2>
-                        <h1>Latest videos</h1>
-                    </div>
+    <!-- 8. SERTIFIKASI SECTION -->
+    <section id="sertifikasi" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center space-y-3 mb-16">
+            <h2 class="text-3xl font-bold">Sertifikasi & <span class="text-accentBlue">Keahlian Resmi</span></h2>
+            <p class="text-gray-400">Sertifikat kompetensi yang telah diraih</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <!-- Sertifikat 1 -->
+            <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue text-xl flex-shrink-0">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-white">Database Administrator</h3>
+                    <p class="text-sm text-gray-400 mt-1">Sertifikasi kompetensi pengelolaan, perancangan, dan optimalisasi basis data relasional.</p>
                 </div>
             </div>
-            <div class="row">
-                <!-- Video 1 -->
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="youtube__item">
-                        <div class="youtube__item__pic set-bg" data-setbg="https://img.youtube.com/vi/FeHkgPk-YIg/hqdefault.jpg">
-                            <a href="https://www.youtube.com/watch?v=FeHkgPk-YIg&t=1s" class="play-btn video-popup"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="youtube__item__text">
-                            <h4>MARI MENGENAL RANSOMWARE BIAR TIDAK TERKENA LINK PHISHING.</h4>
-                        </div>
-                    </div>
+            <!-- Sertifikat 2 -->
+            <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue text-xl flex-shrink-0">
+                    <i class="fa-solid fa-certificate"></i>
                 </div>
-
-                <!-- Video 2 -->
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="youtube__item">
-                        <div class="youtube__item__pic set-bg" data-setbg="https://img.youtube.com/vi/5EkjGZDtP0A/hqdefault.jpg">
-                            <a href="https://www.youtube.com/watch?v=5EkjGZDtP0A" class="play-btn video-popup"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="youtube__item__text">
-                            <h4>NYARI MAKAN DI JAKARTA! | Cara Tanya Arah ke Warteg Terdekat (Getting Around)</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video 3 -->
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="youtube__item">
-                        <div class="youtube__item__pic set-bg" data-setbg="https://img.youtube.com/vi/oKOVpGQxusU/hqdefault.jpg">
-                            <a href="https://www.youtube.com/watch?v=oKOVpGQxusU" class="play-btn video-popup"><i class="fa fa-play"></i></a>
-                        </div>
-                        <div class="youtube__item__text">
-                            <h4>TUGAS UAS - REKAYASA INSTALASI JARINGAN | KELOMPOK 1</h4>
-                        </div>
-                    </div>
+                <div>
+                    <h3 class="font-bold text-lg text-white">TOK (Teknik Operator Komputer)</h3>
+                    <p class="text-sm text-gray-400 mt-1">Sertifikasi keahlian operasional sistem komputer, aplikasi perkantoran, dan manajemen sistem.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Youtube Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer spad set-bg" data-setbg="img/footer-bg.png">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer__address">
-                        <ul>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <p>Phone</p>
-                                <h6>0812-9502-2846</h6>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope"></i>
-                                <p>Email</p>
-                                <h6>dekuizuku@gmailcom.com</h6>
-                            </li>
-                        </ul>
+    <!-- 9. WORK EXPERIENCE SECTION -->
+    <section id="pengalaman" class="py-24 bg-cardBg/30 px-6 border-y border-gray-800/60">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <h2 class="text-3xl font-bold">Work <span class="text-accentBlue">Experience</span></h2>
+                <p class="text-gray-400">Riwayat pengalaman kerja profesional</p>
+            </div>
+            <div class="space-y-6">
+                <!-- Pengalaman 1 -->
+                <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 relative pl-8 md:pl-10">
+                    <div class="absolute left-0 top-0 bottom-0 w-2 bg-accentBlue rounded-l-2xl"></div>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Bnp Media Printing, Design</h3>
+                        <span class="text-xs px-3 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold w-fit mt-1 md:mt-0">Jan 2017 - Feb 2018</span>
                     </div>
+                    <p class="text-gray-400 text-sm">Menangani bidang desain grafis, tata letak cetak media, serta operasional percetakan digital dan produksi media promosi.</p>
                 </div>
-                <div class="col-lg-4 offset-lg-1 col-md-6">
-                    <div class="footer__social">
-                        <h2>D_Pict</h2>
-                        <div class="footer__social__links">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                        </div>
+                <!-- Pengalaman 2 -->
+                <div class="p-6 rounded-2xl bg-cardBg border border-gray-800 relative pl-8 md:pl-10">
+                    <div class="absolute left-0 top-0 bottom-0 w-2 bg-deepBlue rounded-l-2xl"></div>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">PT. Sinar Jaya Prakarsa, Roll Produksi</h3>
+                        <span class="text-xs px-3 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold w-fit mt-1 md:mt-0">Apr 2020 - Jul 2024</span>
                     </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6">
-                    <div class="footer__newslatter">
-                        <h4>Stay With me</h4>
-                        <form action="#">
-                            <input type="text" placeholder="Email">
-                            <button type="submit"><i class="fa fa-send-o"></i></button>
-                        </form>
-                    </div>
+                    <p class="text-gray-400 text-sm">Bertanggung jawab pada bagian divisi roll produksi, memastikan kelancaran alur operasional, kontrol kualitas, dan efisiensi lini produksi industri.</p>
                 </div>
             </div>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            <div class="footer__copyright__text">
-                <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This Portofolio is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+        </div>
+    </section>
+
+    <!-- 10 & 11. FOOTER & KONTAK SECTION -->
+    <footer id="kontak" class="bg-[#070910] border-t border-gray-800 text-gray-400 py-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+            <div class="space-y-3">
+                <span class="text-2xl font-black tracking-wider text-white">D_PICT<span class="text-accentBlue">.</span></span>
+                <p class="text-sm">Portofolio profesional Klaudius Oe Naimnou. Dibuat dengan desain modern dan estetis.</p>
             </div>
-            <!-- Link back to Colorlib can't be removed. Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <div class="space-y-2 text-sm">
+                <h4 class="text-white font-bold mb-3">Informasi Kontak</h4>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-accentBlue"></i> 0812-9502-2846</p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-accentBlue"></i> dekuizuku@gmail.com</p>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-white font-bold">Sosial Media</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-900 text-center text-xs text-gray-500">
+            &copy; 2026 D_Pict Portfolio. All rights reserved.
         </div>
     </footer>
-    <!-- Footer Section End -->
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-
-    <!-- Music Plugin -->
-    <script src="js/jquery.jplayer.min.js"></script>
-    <script src="js/jplayerInit.js"></script>
 </body>
-
 </html>
