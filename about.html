@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Klaudius Oe Naimnou - Portfolio">
+    <meta name="description" content="Klaudius Oe Naimnou - Portfolio & About">
     <meta name="keywords" content="Portfolio, Web Developer, CodeIgniter, PHP">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Klaudius Oe Naimnou | About & Portfolio</title>
+    <title>Klaudius Oe Naimnou | About</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,21 +23,29 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <!-- Custom Professional Portfolio Styling -->
+    <!-- Custom Professional Styling -->
     <style>
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+        }
         .clean-section {
             background-color: #ffffff;
-            padding: 90px 0;
+            padding: 80px 0;
             border-bottom: 1px solid #f0f0f0;
         }
         .portfolio-card {
-            background: #f9f9f9;
-            border-radius: 10px;
+            background: #fdfdfd;
+            border-radius: 12px;
             padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.04);
             transition: all 0.3s ease;
             border-left: 4px solid #db00ff;
+            border-top: 1px solid #eee;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
             height: 100%;
         }
         .portfolio-card:hover {
@@ -46,16 +54,16 @@
             background: #ffffff;
         }
         .portfolio-card h3 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #111;
         }
         .portfolio-card h5 {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             color: #db00ff;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .portfolio-card p, .portfolio-card li {
             color: #555555;
@@ -68,12 +76,12 @@
         }
         .skill-badge {
             display: inline-block;
-            background: #f1e6f5;
+            background: #f7eafc;
             color: #db00ff;
-            padding: 6px 15px;
+            padding: 6px 16px;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             margin: 5px 5px 5px 0;
             transition: all 0.2s ease;
         }
@@ -82,39 +90,42 @@
             color: #fff;
         }
         .video-showcase-item {
-            background: #fafafa;
-            border-radius: 8px;
-            padding: 20px;
+            background: #fdfdfd;
+            border-radius: 12px;
+            padding: 25px;
             text-align: center;
             border: 1px solid #eee;
             transition: all 0.3s ease;
             height: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
         .video-showcase-item:hover {
             border-color: #db00ff;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 25px rgba(219,0,255,0.1);
         }
         .video-showcase-item a.play-btn {
             display: inline-block;
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             background: #db00ff;
             color: #fff;
             border-radius: 50%;
-            line-height: 55px;
+            line-height: 50px;
             text-align: center;
-            font-size: 18px;
+            font-size: 16px;
             margin-top: 15px;
             transition: all 0.3s;
+            text-decoration: none;
         }
         .video-showcase-item a.play-btn:hover {
             background: #111;
             transform: scale(1.1);
+            color: #fff;
         }
     </style>
 </head>
 
-<body style="background-color: #ffffff !important; color: #222222;">
+<body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -123,10 +134,10 @@
     <!-- Header Section Begin -->
     <header class="header header--normal" style="background-color: #111;">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-2 col-md-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt="Logo"></a>
+                    <div class="header__logo" style="padding: 15px 0;">
+                        <a href="./index.html"><img src="img/logo.png" alt="Logo" style="max-height: 40px;"></a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
@@ -153,11 +164,11 @@
     <!-- Header Section End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option" style="background: #f9f9f9; padding: 30px 0;">
+    <div class="breadcrumb-option" style="background: #f9f9f9; padding: 25px 0; border-bottom: 1px solid #eee;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb__links">
+                    <div class="breadcrumb__links" style="font-size: 15px;">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
                         <span>About</span>
                     </div>
@@ -171,18 +182,18 @@
     <section class="clean-section" id="about-me">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about__pic" style="text-align: center;">
-                        <img src="img/about/about.png" alt="Klaudius Oe Naimnou" style="border-radius: 10px; max-width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="about__pic text-center">
+                        <img src="img/about/about.png" alt="Klaudius Oe Naimnou" style="border-radius: 12px; max-width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 3px solid #fff;">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="about__text" style="padding-left: 15px;">
-                        <div class="section-title" style="margin-bottom: 20px;">
-                            <h2 style="color: #db00ff; font-size: 18px; font-weight: 600; text-transform: uppercase; margin-bottom: 5px;">Klaudius Oe Naimnou</h2>
-                            <h1 style="color: #111; font-size: 42px; font-weight: 700;">About me</h1>
+                        <div class="section-title" style="margin-bottom: 15px;">
+                            <span style="color: #db00ff; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Klaudius Oe Naimnou</span>
+                            <h1 style="color: #111; font-size: 38px; font-weight: 700; margin-top: 5px;">About Me</h1>
                         </div>
-                        <p style="color: #555; font-size: 16px; line-height: 1.8; margin-bottom: 30px;">
+                        <p style="color: #555; font-size: 16px; line-height: 1.8; margin-bottom: 25px;">
                             Mahasiswa Manajemen Informatika dengan fokus pengembangan web. Memiliki antusiasme tinggi dalam membangun antarmuka web menggunakan HTML5 dan CSS3, serta tengah mendalami pengembangan back-end berbasis PHP, CodeIgniter 4, dan manajemen basis data MySQL. Berkomitmen untuk terus mengasah kemampuan teknis dan berkontribusi secara optimal dalam tim.
                         </p>
                         <a href="contact.html" class="primary-btn" style="background: #db00ff; color: #fff; padding: 12px 30px; border-radius: 30px; font-weight: 600; display: inline-block; transition: all 0.3s; text-decoration: none;">CONTACT ME</a>
@@ -197,11 +208,9 @@
     <section class="clean-section" style="background-color: #fafafa;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center" style="margin-bottom: 50px;">
-                    <div class="section-title">
-                        <h2 style="color: #db00ff; font-size: 18px; font-weight: 600; text-transform: uppercase;">Expertise</h2>
-                        <h1 style="color: #111; font-size: 38px; font-weight: 700;">Skills & Competencies</h1>
-                    </div>
+                <div class="col-lg-12 text-center" style="margin-bottom: 40px;">
+                    <span style="color: #db00ff; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Expertise</span>
+                    <h2 style="color: #111; font-size: 34px; font-weight: 700; margin-top: 5px;">Skills & Competencies</h2>
                 </div>
             </div>
             <div class="row">
@@ -241,11 +250,9 @@
     <section class="clean-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center" style="margin-bottom: 50px;">
-                    <div class="section-title">
-                        <h2 style="color: #db00ff; font-size: 18px; font-weight: 600; text-transform: uppercase;">Track Record</h2>
-                        <h1 style="color: #111; font-size: 38px; font-weight: 700;">Experience & Projects</h1>
-                    </div>
+                <div class="col-lg-12 text-center" style="margin-bottom: 40px;">
+                    <span style="color: #db00ff; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Track Record</span>
+                    <h2 style="color: #111; font-size: 34px; font-weight: 700; margin-top: 5px;">Experience & Projects</h2>
                 </div>
             </div>
             
@@ -259,19 +266,18 @@
                     </div>
                 </div>
 
-<!-- Project Experience -->
+                <!-- Project Experience -->
                 <div class="col-lg-6 mb-4">
                     <div class="portfolio-card">
                         <h3>Project Experience</h3>
                         <h5>KERENYES CHICKEN (Project Web Development)</h5>
                         <ul>
                             <li>Mengembangkan purwarupa dan antarmuka web fungsional menggunakan HTML5 dan CSS3.</li>
-                            <li>Menerapkan sistem pengelolaan basis data MySQL dan integrasi back-end sederhana untuk mendukung fungsionalitas aplikasi.</li>
+                            <li>Menerapkan sistem pengelolaan basis data MySQL dan integrasi back-end sederhana.</li>
                             <li>Menguji dan mendokumentasikan hasil pengembangan antarmuka web secara berkala.</li>
                         </ul>
-                        <!-- Tombol atau Link Menuju Website -->
                         <div style="margin-top: 15px;">
-                            <a href="https://egigibran.github.io/kerenyes-chicken" target="_blank" class="primary-btn" style="padding: 6px 20px; font-size: 14px;">Kunjungi Website <i class="fa fa-external-link"></i></a>
+                            <a href="https://egigibran.github.io/kerenyes-chicken" target="_blank" class="primary-btn" style="padding: 6px 18px; font-size: 13px; background: #db00ff; color: #fff; border-radius: 20px; text-decoration: none;">Kunjungi Website <i class="fa fa-external-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -302,11 +308,9 @@
     <section class="clean-section" style="background-color: #fafafa;" id="showcase">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center" style="margin-bottom: 50px;">
-                    <div class="section-title">
-                        <h2 style="color: #db00ff; font-size: 18px; font-weight: 600; text-transform: uppercase;">Portfolio Media</h2>
-                        <h1 style="color: #111; font-size: 38px; font-weight: 700;">Project Videos & Showcase</h1>
-                    </div>
+                <div class="col-lg-12 text-center" style="margin-bottom: 40px;">
+                    <span style="color: #db00ff; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Portfolio Media</span>
+                    <h2 style="color: #111; font-size: 34px; font-weight: 700; margin-top: 5px;">Project Videos & Showcase</h2>
                 </div>
             </div>
             
@@ -314,7 +318,7 @@
                 <!-- Item 1: YouTube -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="video-showcase-item">
-                        <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #111;">YouTube Project Video</h4>
+                        <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #111;">YouTube Project Video</h4>
                         <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Tonton video dokumentasi atau presentasi tugas yang telah dikerjakan.</p>
                         <a href="https://www.youtube.com/watch?v=oKOVpGQxusU" class="play-btn video-popup" target="_blank"><i class="fa fa-play"></i></a>
                     </div>
@@ -323,7 +327,7 @@
                 <!-- Item 2: Facebook 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="video-showcase-item">
-                        <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #111;">Facebook Video 1</h4>
+                        <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #111;">Facebook Video 1</h4>
                         <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Akses video aktivitas dan portofolio melalui tautan Facebook.</p>
                         <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" class="play-btn" target="_blank"><i class="fa fa-facebook"></i></a>
                     </div>
@@ -332,7 +336,7 @@
                 <!-- Item 3: Facebook 2 -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="video-showcase-item">
-                        <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #111;">Facebook Video 2</h4>
+                        <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #111;">Facebook Video 2</h4>
                         <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Akses video publikasi tambahan melalui tautan Facebook.</p>
                         <a href="https://web.facebook.com/share/v/1DBygYzqRV/" class="play-btn" target="_blank"><i class="fa fa-facebook"></i></a>
                     </div>
@@ -343,7 +347,7 @@
     <!-- Project Video Showcase Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png" style="background-color: #111;">
+    <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png" style="background-color: #111; padding: 60px 0 30px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -365,7 +369,7 @@
                 <div class="col-lg-4 offset-lg-1 col-md-6 mb-4">
                     <div class="footer__social">
                         <h2>Portfolio</h2>
-                        <div class="footer__social__links">
+                        <div class="footer__social__links" style="margin-top: 15px;">
                             <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
@@ -375,7 +379,7 @@
                 </div>
                 <div class="col-lg-3 offset-lg-1 col-md-6 mb-4">
                     <div class="footer__newslatter">
-                        <h4>Stay With me</h4>
+                        <h4>Stay With Me</h4>
                         <form action="#">
                             <input type="text" placeholder="Email">
                             <button type="submit"><i class="fa fa-send-o"></i></button>

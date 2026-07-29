@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Klaudius Oe Naimnou - Contact Portfolio">
-    <meta name="keywords" content="Portfolio, Contact, Music, Web Developer">
+    <meta name="keywords" content="Portfolio, Contact, Web Developer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Klaudius Oe Naimnou | Contact</title>
@@ -22,6 +22,30 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- Custom Styling to match About & Home -->
+    <style>
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+        }
+        .contact__address ul li i {
+            color: #db00ff;
+        }
+        .contact__form .site-btn {
+            background: #db00ff;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .contact__form .site-btn:hover {
+            background: #111;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,10 +57,10 @@
     <!-- Header Section Begin -->
     <header class="header header--normal" style="background-color: #111;">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-2 col-md-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    <div class="header__logo" style="padding: 15px 0;">
+                        <a href="./index.html"><img src="img/logo.png" alt="Logo" style="max-height: 40px;"></a>
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
@@ -63,11 +87,11 @@
     <!-- Header Section End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option" style="background: #f9f9f9; padding: 30px 0;">
+    <div class="breadcrumb-option" style="background: #f9f9f9; padding: 25px 0; border-bottom: 1px solid #eee;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb__links">
+                    <div class="breadcrumb__links" style="font-size: 15px;">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
                         <span>Contact</span>
                     </div>
@@ -78,26 +102,25 @@
     <!-- Breadcrumb End -->
 
     <!-- Map Begin -->
-    <div class="map">
+    <div class="map" style="padding: 40px 0 0 0;">
         <div class="container">
-            <!-- Peta diperbarui ke koordinat wilayah Jakarta, Indonesia -->
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24021200216!2d106.75947842363191!3d-6.229741271101859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20 Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid"
-                height="585" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24021200216!2d106.75947842363191!3d-6.229741271101859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid"
+                height="450" style="border:0; width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
     <!-- Map End -->
 
     <!-- Contact Section Begin -->
-    <section class="contact spad" style="background-color: #ffffff;">
+    <section class="contact spad" style="background-color: #ffffff; padding-top: 60px;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="contact__address">
                         <div class="section-title">
-                            <h2 style="color: #111;">Contact info</h2>
+                            <h2 style="color: #111; font-weight: 700;">Contact Info</h2>
                         </div>
-                        <p>Feel free to reach out for collaborations, project inquiries, or just to say hello.</p>
+                        <p style="color: #666; margin-bottom: 25px;">Feel free to reach out for collaborations, project inquiries, or just to say hello.</p>
                         <ul>
                             <li>
                                 <i class="fa fa-map-marker"></i>
@@ -120,16 +143,16 @@
                 <div class="col-lg-8">
                     <div class="contact__form">
                         <div class="section-title">
-                            <h2 style="color: #111;">Get in touch</h2>
+                            <h2 style="color: #111; font-weight: 700;">Get in Touch</h2>
                         </div>
-                        <p>If you have any questions or would like to work together, please fill out the form below.</p>
+                        <p style="color: #666; margin-bottom: 25px;">If you have any questions or would like to work together, please fill out the form below.</p>
                         <form action="#">
-                            <div class="input__list">
-                                <input type="text" placeholder="Name">
-                                <input type="text" placeholder="Email">
-                                <input type="text" placeholder="Website">
+                            <div class="input__list" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+                                <input type="text" placeholder="Name" style="flex: 1; min-width: 200px; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px;">
+                                <input type="text" placeholder="Email" style="flex: 1; min-width: 200px; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px;">
+                                <input type="text" placeholder="Website" style="flex: 1; min-width: 200px; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px;">
                             </div>
-                            <textarea placeholder="Comment"></textarea>
+                            <textarea placeholder="Comment" style="width: 100%; height: 150px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 20px;"></textarea>
                             <button type="submit" class="site-btn">SEND MESSAGE</button>
                         </form>
                     </div>
@@ -140,10 +163,10 @@
     <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png" style="background-color: #111;">
+    <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png" style="background-color: #111; padding: 60px 0 30px;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 mb-4">
                     <div class="footer__address">
                         <ul>
                             <li>
@@ -159,10 +182,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 offset-lg-1 col-md-6">
+                <div class="col-lg-4 offset-lg-1 col-md-6 mb-4">
                     <div class="footer__social">
                         <h2>Portfolio</h2>
-                        <div class="footer__social__links">
+                        <div class="footer__social__links" style="margin-top: 15px;">
                             <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
@@ -170,9 +193,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6">
+                <div class="col-lg-3 offset-lg-1 col-md-6 mb-4">
                     <div class="footer__newslatter">
-                        <h4>Stay With me</h4>
+                        <h4>Stay With Me</h4>
                         <form action="#">
                             <input type="text" placeholder="Email">
                             <button type="submit"><i class="fa fa-send-o"></i></button>
@@ -194,10 +217,6 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
-    <!-- Music Plugin -->
-    <script src="js/jquery.jplayer.min.js"></script>
-    <script src="js/jplayerInit.js"></script>
 </body>
 
 </html>
