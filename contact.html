@@ -1,222 +1,158 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Klaudius Oe Naimnou - Contact Portfolio">
-    <meta name="keywords" content="Portfolio, Contact, Web Developer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Klaudius Oe Naimnou | Contact</title>
-
-    <!-- Google Font -->
+    <title>Klaudius Oe Naimnou | Hubungi Saya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        accentBlue: '#3b82f6',
+                        neonBlue: '#60a5fa',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
-    <link rel="stylesheet" href="css/nowfont.css" type="text/css">
-    <link rel="stylesheet" href="css/rockville.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-
-    <!-- Custom Styling to match About & Home -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: #ffffff;
-            color: #222222;
+        body { font-family: 'Rajdhani', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
+        .neon-glow {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
-        .contact__address ul li i {
-            color: #db00ff;
-        }
-        .contact__form .site-btn {
-            background: #db00ff;
-            color: #fff;
-            border: none;
-            border-radius: 30px;
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .contact__form .site-btn:hover {
-            background: #111;
+        .lightning-bg {
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0b0f19 80%);
+            position: relative;
+            overflow: hidden;
         }
     </style>
 </head>
 
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+<body class="lightning-bg min-h-screen">
 
-    <!-- Header Section Begin -->
-    <header class="header header--normal" style="background-color: #111;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-2 col-md-2">
-                    <div class="header__logo" style="padding: 15px 0;">
-                        <a href="./index.html"><img src="img/logo.png" alt="Logo" style="max-height: 40px;"></a>
-                    </div>
-                </div>
-                <div class="col-lg-10 col-md-10">
-                    <div class="header__nav">
-                        <nav class="header__menu mobile-menu">
-                            <ul>
-                                <li><a href="./index.html">Home</a></li>
-                                <li><a href="./about.html">About</a></li>
-                                <li class="active"><a href="./contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <div class="header__right__social">
-                            <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="https://github.com" target="_blank"><i class="fa fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Navbar Section -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-blue-900/40">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="./index.html" class="text-2xl font-bold tracking-wider text-white">D_PICT<span class="text-blue-500">.</span></a>
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-lg">
+                <a href="./index.html" class="text-gray-300 hover:text-blue-400 transition">Home</a>
+                <a href="./about.html" class="text-gray-300 hover:text-blue-400 transition">Tentang</a>
+                <a href="./contact.html" class="text-blue-400 font-semibold">Hubungi Saya</a>
+            </nav>
+            <div>
+                <a href="./contact.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-blue-500/30 hover:scale-105 transition transform inline-block">Get in Touch</a>
             </div>
-            <div id="mobile-menu-wrap"></div>
         </div>
     </header>
-    <!-- Header Section End -->
 
-    <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option" style="background: #f9f9f9; padding: 25px 0; border-bottom: 1px solid #eee;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__links" style="font-size: 15px;">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <span>Contact</span>
+    <!-- Spacing for fixed header -->
+    <div class="pt-32"></div>
+
+    <!-- CONTACT SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Let's Connect</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Hubungi Saya</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Contact Info -->
+            <div class="bg-cardBg p-8 rounded-2xl neon-glow space-y-8">
+                <h3 class="text-2xl font-bold text-white">Informasi Kontak</h3>
+                <p class="text-gray-300">Jangan ragu untuk menghubungi saya untuk kolaborasi, penawaran proyek, atau sekadar berdiskusi.</p>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-400">Phone / WhatsApp</h4>
+                            <p class="text-white font-medium">0812-9502-2846</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-400">Email</h4>
+                            <p class="text-white font-medium">dekuizuku@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-400">Lokasi Kampus / Domisili</h4>
+                            <p class="text-white font-medium">LP3I Jakarta Pusat (Kampus Utama)</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
 
-    <!-- Map Begin -->
-    <div class="map" style="padding: 40px 0 0 0;">
-        <div class="container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24021200216!2d106.75947842363191!3d-6.229741271101859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid"
-                height="450" style="border:0; width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </div>
-    <!-- Map End -->
-
-    <!-- Contact Section Begin -->
-    <section class="contact spad" style="background-color: #ffffff; padding-top: 60px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="contact__address">
-                        <div class="section-title">
-                            <h2 style="color: #111; font-weight: 700;">Contact Info</h2>
-                        </div>
-                        <p style="color: #666; margin-bottom: 25px;">Feel free to reach out for collaborations, project inquiries, or just to say hello.</p>
-                        <ul>
-                            <li>
-                                <i class="fa fa-map-marker"></i>
-                                <h5>Address</h5>
-                                <p>Jakarta, Indonesia</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <h5>Hotline</h5>
-                                <span>0812-9502-2846</span>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope"></i>
-                                <h5>Email</h5>
-                                <p>dekuizuku811@gmail.com</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="contact__form">
-                        <div class="section-title">
-                            <h2 style="color: #111; font-weight: 700;">Get in Touch</h2>
-                        </div>
-                        <p style="color: #666; margin-bottom: 25px;">If you have any questions or would like to work together, please fill out the form below.</p>
-                        <form action="#">
-                            <div class="input__list" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
-                                <input type="text" placeholder="Name" style="flex: 1; min-width: 200px; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px;">
-                                <input type="text" placeholder="Email" style="flex: 1; min-width: 200px; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px;">
-                                <input type="text" placeholder="Website" style="flex: 1; min-width: 200px; padding: 12px 15px; border: 1px solid #ddd; border-radius: 6px;">
+            <!-- Contact Form & Map -->
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-cardBg p-8 rounded-2xl neon-glow">
+                    <h3 class="text-2xl font-bold text-white mb-6">Kirim Pesan</h3>
+                    <form action="#" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Nama Lengkap</label>
+                                <input type="text" placeholder="Masukkan nama Anda" class="w-full bg-[#0b0f19] border border-blue-900/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition">
                             </div>
-                            <textarea placeholder="Comment" style="width: 100%; height: 150px; padding: 15px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 20px;"></textarea>
-                            <button type="submit" class="site-btn">SEND MESSAGE</button>
-                        </form>
-                    </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                                <input type="email" placeholder="nama@email.com" class="w-full bg-[#0b0f19] border border-blue-900/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Pesan</label>
+                            <textarea rows="5" placeholder="Tuliskan pesan atau detail proyek Anda..." class="w-full bg-[#0b0f19] border border-blue-900/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/30 transition transform hover:scale-[1.01]">Kirim Pesan Sekarang</button>
+                    </form>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="bg-cardBg p-4 rounded-2xl neon-glow">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24021200216!2d106.75947842363191!3d-6.229741271101859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Contact Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png" style="background-color: #111; padding: 60px 0 30px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="footer__address">
-                        <ul>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <p>Phone</p>
-                                <h6>0812-9502-2846</h6>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope"></i>
-                                <p>Email</p>
-                                <h6>dekuizuku811@gmail.com</h6>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 offset-lg-1 col-md-6 mb-4">
-                    <div class="footer__social">
-                        <h2>Portfolio</h2>
-                        <div class="footer__social__links" style="margin-top: 15px;">
-                            <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="https://github.com" target="_blank"><i class="fa fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 mb-4">
-                    <div class="footer__newslatter">
-                        <h4>Stay With Me</h4>
-                        <form action="#">
-                            <input type="text" placeholder="Email">
-                            <button type="submit"><i class="fa fa-send-o"></i></button>
-                        </form>
-                    </div>
-                </div>
+    <!-- Footer Section -->
+    <footer class="bg-cardBg border-t border-gray-800/80 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div>
+                <h3 class="text-xl font-bold text-white mb-2">Klaudius Oe Naimnou</h3>
+                <p class="text-gray-400 text-sm">Web Developer & Mahasiswa Manajemen Informatika.</p>
+            </div>
+            <div class="text-left md:text-center">
+                <p class="text-gray-300 text-sm mb-1"><i class="fa-solid fa-phone text-blue-400 mr-2"></i> Phone: 0812-9502-2846</p>
+                <p class="text-gray-300 text-sm"><i class="fa-solid fa-envelope text-blue-400 mr-2"></i> Email: dekuizuku@gmail.com</p>
+            </div>
+            <div class="flex md:justify-end space-x-4">
+                <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://twitter.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
 </body>
-
 </html>

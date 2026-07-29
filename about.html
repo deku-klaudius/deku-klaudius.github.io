@@ -1,406 +1,413 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Klaudius Oe Naimnou - Portfolio & About">
-    <meta name="keywords" content="Portfolio, Web Developer, CodeIgniter, PHP">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Klaudius Oe Naimnou | About</title>
-
-    <!-- Google Font -->
+    <title>Klaudius Oe Naimnou | Tentang</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        accentBlue: '#3b82f6',
+                        neonBlue: '#60a5fa',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
-    <link rel="stylesheet" href="css/nowfont.css" type="text/css">
-    <link rel="stylesheet" href="css/rockville.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-
-    <!-- Custom Professional Styling -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: #ffffff;
-            color: #222222;
+        body { font-family: 'Rajdhani', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
+        .neon-glow {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
-        .clean-section {
-            background-color: #ffffff;
-            padding: 80px 0;
-            border-bottom: 1px solid #f0f0f0;
+        .neon-glow:hover {
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.5);
         }
-        .portfolio-card {
-            background: #fdfdfd;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.04);
-            transition: all 0.3s ease;
-            border-left: 4px solid #db00ff;
-            border-top: 1px solid #eee;
-            border-right: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            height: 100%;
+        /* Background Animasi Neon Listrik / Kilat */
+        .lightning-bg {
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0b0f19 80%);
+            position: relative;
+            overflow: hidden;
         }
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(219,0,255,0.12);
-            background: #ffffff;
+        .lightning-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(120deg, transparent 40%, rgba(59, 130, 246, 0.05) 50%, transparent 60%);
+            animation: lightning 8s infinite linear;
+            pointer-events: none;
         }
-        .portfolio-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #111;
-        }
-        .portfolio-card h5 {
-            font-size: 15px;
-            font-weight: 600;
-            color: #db00ff;
-            margin-bottom: 10px;
-        }
-        .portfolio-card p, .portfolio-card li {
-            color: #555555;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        .portfolio-card ul {
-            padding-left: 18px;
-            margin-bottom: 0;
-        }
-        .skill-badge {
-            display: inline-block;
-            background: #f7eafc;
-            color: #db00ff;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 13px;
-            margin: 5px 5px 5px 0;
-            transition: all 0.2s ease;
-        }
-        .skill-badge:hover {
-            background: #db00ff;
-            color: #fff;
-        }
-        .video-showcase-item {
-            background: #fdfdfd;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-            height: 100%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-        }
-        .video-showcase-item:hover {
-            border-color: #db00ff;
-            box-shadow: 0 8px 25px rgba(219,0,255,0.1);
-        }
-        .video-showcase-item a.play-btn {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: #db00ff;
-            color: #fff;
-            border-radius: 50%;
-            line-height: 50px;
-            text-align: center;
-            font-size: 16px;
-            margin-top: 15px;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        .video-showcase-item a.play-btn:hover {
-            background: #111;
-            transform: scale(1.1);
-            color: #fff;
+        @keyframes lightning {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
         }
     </style>
 </head>
 
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+<body class="lightning-bg min-h-screen">
 
-    <!-- Header Section Begin -->
-    <header class="header header--normal" style="background-color: #111;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-2 col-md-2">
-                    <div class="header__logo" style="padding: 15px 0;">
-                        <a href="./index.html"><img src="img/logo.png" alt="Logo" style="max-height: 40px;"></a>
-                    </div>
-                </div>
-                <div class="col-lg-10 col-md-10">
-                    <div class="header__nav">
-                        <nav class="header__menu mobile-menu">
-                            <ul>
-                                <li><a href="./index.html">Home</a></li>
-                                <li class="active"><a href="./about.html">About</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <div class="header__right__social">
-                            <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="https://github.com" target="_blank"><i class="fa fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Navbar Section -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-blue-900/40">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="./index.html" class="text-2xl font-bold tracking-wider text-white">D_PICT<span class="text-blue-500">.</span></a>
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-lg">
+                <a href="./index.html" class="text-gray-300 hover:text-blue-400 transition">Home</a>
+                <a href="./about.html" class="text-blue-400 font-semibold">Tentang</a>
+                <a href="./contact.html" class="text-gray-300 hover:text-blue-400 transition">Hubungi Saya</a>
+            </nav>
+            <div>
+                <a href="./contact.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-blue-500/30 hover:scale-105 transition transform inline-block">Get in Touch</a>
             </div>
-            <div id="mobile-menu-wrap"></div>
         </div>
     </header>
-    <!-- Header Section End -->
 
-    <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option" style="background: #f9f9f9; padding: 25px 0; border-bottom: 1px solid #eee;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__links" style="font-size: 15px;">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <span>About</span>
+    <!-- Spacing for fixed header -->
+    <div class="pt-32"></div>
+
+    <!-- 1. ABOUT / PROFIL SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative group flex justify-center">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
+                <div class="relative bg-cardBg p-4 rounded-2xl neon-glow max-w-md w-full text-center">
+                    <!-- Space untuk mengunggah foto profil -->
+                    <img src="img/about/about.png" alt="Klaudius Oe Naimnou" class="rounded-xl w-full h-auto object-cover transition duration-300 group-hover:scale-[1.02]">
+                    <div class="mt-4 bg-blue-950/80 border border-blue-800/50 p-3 rounded-xl flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-graduation-cap text-blue-400 text-xl"></i>
+                        <div class="text-left">
+                            <h4 class="text-sm font-bold text-white">LP3I Jakarta Pusat</h4>
+                            <p class="text-xs text-blue-300">Kampus Utama</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div>
+                <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Tentang Saya</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mt-2 mb-6">Klaudius Oe Naimnou</h1>
+                <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                    Mahasiswa Manajemen Informatika dengan fokus Web Development. Berpengalaman membangun aplikasi full-stack menggunakan Html5, Css3, dan CodeIgniter 4, didukung pemahaman dasar keamanan aplikasi web dari pengalaman security testing. Terbiasa menangani proyek dari perancangan database, autentikasi, hingga deployment di lingkungan serverless. Interest sebagai Web Developer untuk mengasah kemampuan teknis dalam tim production-level.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#skills" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-medium transition transform hover:scale-105 shadow-lg shadow-blue-600/30">Jelajahi Skill & Proyek</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- Breadcrumb End -->
+    </section>
 
-    <!-- About Profile Section Begin -->
-    <section class="clean-section" id="about-me">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-4 mb-lg-0">
-                    <div class="about__pic text-center">
-                        <img src="img/about/about.png" alt="Klaudius Oe Naimnou" style="border-radius: 12px; max-width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 3px solid #fff;">
+    <!-- 2. SKILLS SECTION (Hard Skills & Soft Skills) -->
+    <section id="skills" class="py-24 max-w-7xl mx-auto px-6 border-t border-gray-800/60">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Kompetensi</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Skills & Keahlian</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Hard Skills -->
+            <div class="bg-cardBg p-8 rounded-2xl neon-glow transition duration-300 hover:scale-[1.01]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 text-xl">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Hard Skills</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">CodeIgniter 4</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">PHP</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">HTML5</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">MySQL</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">CSS3</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">AJAX</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">Git</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">NODE.JS</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">TAILWIND CSS</span>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="bg-cardBg p-8 rounded-2xl neon-glow transition duration-300 hover:scale-[1.01]">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 text-xl">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Soft Skills</h3>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">Koordinasi Tim</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">Pemecahan Masalah</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">Inisiatif & Mandiri</span>
+                    <span class="px-4 py-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 rounded-xl font-medium text-sm hover:bg-blue-600 hover:text-white transition">Perhatian terhadap Detail</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROJECT WEBSITE SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-6 border-t border-gray-800/60">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Portfolio</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Project Website</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+            <div class="bg-cardBg p-8 rounded-2xl neon-glow transition duration-300 hover:scale-105">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-2xl font-bold text-white">KERENYES CHICKEN</h3>
+                    <span class="px-3 py-1 bg-blue-600/20 border border-blue-500/40 text-blue-400 text-xs font-semibold rounded-full">Full-Stack Web</span>
+                </div>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Mengembangkan purwarupa dan antarmuka web fungsional menggunakan HTML5, CSS3, serta pengelolaan basis data MySQL dan integrasi back-end.
+                </p>
+                <a href="https://egigibran.github.io/kerenyes-chicken" target="_blank" class="inline-flex items-center space-x-2 text-blue-400 font-semibold hover:text-blue-300 transition">
+                    <span>Kunjungi Website Project</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROJECT VIDEO SHOWCASE SECTION (5 Videos: YouTube & Facebook) -->
+    <section class="py-24 max-w-7xl mx-auto px-6 border-t border-gray-800/60">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Media Showcase</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Project Videos (YouTube & Facebook)</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Video 1 (YouTube) -->
+            <div class="bg-cardBg p-6 rounded-2xl neon-glow transition duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-red-600/20 border border-red-500/40 rounded-xl flex items-center justify-center text-red-400 text-xl mb-4">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">YouTube Project Video</h3>
+                    <p class="text-gray-400 text-sm mb-6">Video dokumentasi dan presentasi sistem aplikasi berbasis web.</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=oKOVpGQxusU" target="_blank" class="w-full py-3 bg-red-600 hover:bg-red-500 text-white font-semibold rounded-xl text-center transition shadow-lg shadow-red-600/30 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-play"></i><span>Tonton Video</span>
+                </a>
+            </div>
+
+            <!-- Video 2 (Facebook) -->
+            <div class="bg-cardBg p-6 rounded-2xl neon-glow transition duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Facebook Video 1</h3>
+                    <p class="text-gray-400 text-sm mb-6">Dokumentasi kegiatan dan progress pengerjaan tugas proyek.</p>
+                </div>
+                <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-play"></i><span>Tonton Video</span>
+                </a>
+            </div>
+
+            <!-- Video 3 (Facebook) -->
+            <div class="bg-cardBg p-6 rounded-2xl neon-glow transition duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Facebook Video 2</h3>
+                    <p class="text-gray-400 text-sm mb-6">Akses video publikasi tambahan melalui tautan Facebook.</p>
+                </div>
+                <a href="https://web.facebook.com/share/v/1DBygYzqRV/" target="_blank" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-play"></i><span>Tonton Video</span>
+                </a>
+            </div>
+
+            <!-- Video 4 (Facebook / Lainnya) -->
+            <div class="bg-cardBg p-6 rounded-2xl neon-glow transition duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Facebook Video 3</h3>
+                    <p class="text-gray-400 text-sm mb-6">Rekaman penjelasan teknis dan implementasi fitur web.</p>
+                </div>
+                <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-play"></i><span>Tonton Video</span>
+                </a>
+            </div>
+
+            <!-- Video 5 (Facebook / Lainnya) -->
+            <div class="bg-cardBg p-6 rounded-2xl neon-glow transition duration-300 hover:scale-105 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Facebook Video 4</h3>
+                    <p class="text-gray-400 text-sm mb-6">Presentasi hasil akhir pengembangan aplikasi web.</p>
+                </div>
+                <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-center transition shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-play"></i><span>Tonton Video</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SERTIFIKASI SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-6 border-t border-gray-800/60">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Akreditasi & Keahlian</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Sertifikasi Profesional</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Sertifikat 1 -->
+            <div class="bg-cardBg p-6 rounded-2xl neon-glow transition duration-300 hover:scale-105 text-center">
+                <div class="overflow-hidden rounded-xl mb-4 border border-blue-900/50">
+                    <a href="certificate-detail.html?cert=db-admin" target="_blank">
+                        <img src="img/about/about.png" alt="Database Administrator" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+                    </a>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Database Administrator</h3>
+                <p class="text-gray-400 text-sm mb-4">Sertifikasi kompetensi manajemen dan perancangan database relasional.</p>
+                <a href="certificate-detail.html?cert=db-admin" class="inline-block px-5 py-2 bg-blue-600/20 border border-blue-500/40 text-blue-400 font-semibold rounded-xl hover:bg-blue-600 hover:text-white transition text-sm">Lihat Detail Sertifikat</a>
+            </div>
+
+            <!-- Sertifikat 2 -->
+            <div class="bg-cardBg p-6 rounded-2xl neon-glow transition duration-300 hover:scale-105 text-center">
+                <div class="overflow-hidden rounded-xl mb-4 border border-blue-900/50">
+                    <a href="certificate-detail.html?cert=tok" target="_blank">
+                        <img src="img/about/about.png" alt="TOK (Teknik Operator Komputer)" class="w-full h-48 object-cover hover:scale-110 transition duration-500">
+                    </a>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">TOK (Teknik Operator Komputer)</h3>
+                <p class="text-gray-400 text-sm mb-4">Sertifikasi pengoperasian sistem komputer dan aplikasi pendukung.</p>
+                <a href="certificate-detail.html?cert=tok" class="inline-block px-5 py-2 bg-blue-600/20 border border-blue-500/40 text-blue-400 font-semibold rounded-xl hover:bg-blue-600 hover:text-white transition text-sm">Lihat Detail Sertifikat</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GALERI FOTOGRAFIS (8 Instagram Links) -->
+    <section class="py-24 max-w-7xl mx-auto px-6 border-t border-gray-800/60">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Visual Gallery</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Galeri Fotografis</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- 8 Instagram Links -->
+            <a href="https://instagram.com" target="_blank" class="group relative bg-cardBg rounded-xl overflow-hidden neon-glow aspect-square block">
+                <img src="img/about/about.png" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                </div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="group relative bg-cardBg rounded-xl overflow-hidden neon-glow aspect-square block">
+                <img src="img/about/about.png" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                </div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="group relative bg-cardBg rounded-xl overflow-hidden neon-glow aspect-square block">
+                <img src="img/about/about.png" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                </div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="group relative bg-cardBg rounded-xl overflow-hidden neon-glow aspect-square block">
+                <img src="img/about/about.png" alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                </div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="group relative bg-cardBg rounded-xl overflow-hidden neon-glow aspect-square block">
+                <img src="img/about/about.png" alt="Gallery 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                </div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="group relative bg-cardBg rounded-xl overflow-hidden neon-glow aspect-square block">
+                <img src="img/about/about.png" alt="Gallery 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                </div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="group relative bg-cardBg rounded-xl overflow-hidden neon-glow aspect-square block">
+                <img src="img/about/about.png" alt="Gallery 7" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                </div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="group relative bg-cardBg rounded-xl overflow-hidden neon-glow aspect-square block">
+                <img src="img/about/about.png" alt="Gallery 8" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-blue-950/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 7. EXPERIENCE SECTION (Work Experience & Organizational Experience) -->
+    <section class="py-24 max-w-7xl mx-auto px-6 border-t border-gray-800/60">
+        <div class="text-center mb-16">
+            <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Riwayat Hidup</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Pengalaman & Organisasi</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Work Experience -->
+            <div class="bg-cardBg p-8 rounded-2xl neon-glow">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <i class="fa-solid fa-briefcase text-blue-400 mr-3"></i> Work Experience
+                </h3>
+                <div class="space-y-6">
+                    <div class="border-l-2 border-blue-500 pl-4">
+                        <h4 class="text-lg font-bold text-white">BNP Media Printing</h4>
+                        <p class="text-blue-400 text-sm font-medium">Design</p>
+                        <span class="text-gray-400 text-xs">Jan 2017 - Feb 2018</span>
+                    </div>
+                    <div class="border-l-2 border-blue-500 pl-4">
+                        <h4 class="text-lg font-bold text-white">PT. Sinar Jaya Prakarsa</h4>
+                        <p class="text-blue-400 text-sm font-medium">Roll Produksi</p>
+                        <span class="text-gray-400 text-xs">Apr 2020 - Jul 2024</span>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="about__text" style="padding-left: 15px;">
-                        <div class="section-title" style="margin-bottom: 15px;">
-                            <span style="color: #db00ff; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Klaudius Oe Naimnou</span>
-                            <h1 style="color: #111; font-size: 38px; font-weight: 700; margin-top: 5px;">About Me</h1>
-                        </div>
-                        <p style="color: #555; font-size: 16px; line-height: 1.8; margin-bottom: 25px;">
-                            Mahasiswa Manajemen Informatika dengan fokus pengembangan web. Memiliki antusiasme tinggi dalam membangun antarmuka web menggunakan HTML5 dan CSS3, serta tengah mendalami pengembangan back-end berbasis PHP, CodeIgniter 4, dan manajemen basis data MySQL. Berkomitmen untuk terus mengasah kemampuan teknis dan berkontribusi secara optimal dalam tim.
-                        </p>
-                        <a href="contact.html" class="primary-btn" style="background: #db00ff; color: #fff; padding: 12px 30px; border-radius: 30px; font-weight: 600; display: inline-block; transition: all 0.3s; text-decoration: none;">CONTACT ME</a>
+            </div>
+
+            <!-- Organizational Experience -->
+            <div class="bg-cardBg p-8 rounded-2xl neon-glow">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                    <i class="fa-solid fa-users text-blue-400 mr-3"></i> Organizational Experience
+                </h3>
+                <div class="space-y-6">
+                    <div class="border-l-2 border-blue-500 pl-4">
+                        <h4 class="text-lg font-bold text-white">UKM Timekovi</h4>
+                        <p class="text-blue-400 text-sm font-medium">Anggota</p>
+                        <span class="text-gray-400 text-xs">2024 - 2026</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About Profile Section End -->
 
-    <!-- Skills & Expertise Section Begin -->
-    <section class="clean-section" style="background-color: #fafafa;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center" style="margin-bottom: 40px;">
-                    <span style="color: #db00ff; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Expertise</span>
-                    <h2 style="color: #111; font-size: 34px; font-weight: 700; margin-top: 5px;">Skills & Competencies</h2>
-                </div>
+    <!-- Footer Section -->
+    <footer class="bg-cardBg border-t border-gray-800/80 py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div>
+                <h3 class="text-xl font-bold text-white mb-2">Klaudius Oe Naimnou</h3>
+                <p class="text-gray-400 text-sm">Web Developer & Mahasiswa Manajemen Informatika.</p>
             </div>
-            <div class="row">
-                <!-- Hard Skills -->
-                <div class="col-lg-6 mb-4">
-                    <div class="portfolio-card">
-                        <h3><i class="fa fa-code" style="color: #db00ff; margin-right: 10px;"></i> Hard Skills</h3>
-                        <div style="margin-top: 15px;">
-                            <span class="skill-badge">CodeIgniter 4</span>
-                            <span class="skill-badge">PHP</span>
-                            <span class="skill-badge">HTML5</span>
-                            <span class="skill-badge">MySQL</span>
-                            <span class="skill-badge">CSS3</span>
-                            <span class="skill-badge">AJAX</span>
-                            <span class="skill-badge">Git</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Soft Skills -->
-                <div class="col-lg-6 mb-4">
-                    <div class="portfolio-card">
-                        <h3><i class="fa fa-users" style="color: #db00ff; margin-right: 10px;"></i> Soft Skills</h3>
-                        <div style="margin-top: 15px;">
-                            <span class="skill-badge">Koordinasi Tim</span>
-                            <span class="skill-badge">Pemecahan Masalah</span>
-                            <span class="skill-badge">Inisiatif & Mandiri</span>
-                            <span class="skill-badge">Perhatian terhadap Detail</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-left md:text-center">
+                <p class="text-gray-300 text-sm mb-1"><i class="fa-solid fa-phone text-blue-400 mr-2"></i> Phone: 0812-9502-2846</p>
+                <p class="text-gray-300 text-sm"><i class="fa-solid fa-envelope text-blue-400 mr-2"></i> Email: dekuizuku@gmail.com</p>
             </div>
-        </div>
-    </section>
-    <!-- Skills & Expertise Section End -->
-
-    <!-- Experience & Portfolio Section Begin -->
-    <section class="clean-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center" style="margin-bottom: 40px;">
-                    <span style="color: #db00ff; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Track Record</span>
-                    <h2 style="color: #111; font-size: 34px; font-weight: 700; margin-top: 5px;">Experience & Projects</h2>
-                </div>
-            </div>
-            
-            <div class="row">
-                <!-- Organizational Experience -->
-                <div class="col-lg-6 mb-4">
-                    <div class="portfolio-card">
-                        <h3>Organizational Experience</h3>
-                        <h5>Anggota / Pengurus, UKM TIMEKOVI</h5>
-                        <p>Aktif berpartisipasi dalam kegiatan organisasi, mengasah keterampilan komunikasi, koordinasi tim, dan tanggung jawab kolektif.</p>
-                    </div>
-                </div>
-
-                <!-- Project Experience -->
-                <div class="col-lg-6 mb-4">
-                    <div class="portfolio-card">
-                        <h3>Project Experience</h3>
-                        <h5>KERENYES CHICKEN (Project Web Development)</h5>
-                        <ul>
-                            <li>Mengembangkan purwarupa dan antarmuka web fungsional menggunakan HTML5 dan CSS3.</li>
-                            <li>Menerapkan sistem pengelolaan basis data MySQL dan integrasi back-end sederhana.</li>
-                            <li>Menguji dan mendokumentasikan hasil pengembangan antarmuka web secara berkala.</li>
-                        </ul>
-                        <div style="margin-top: 15px;">
-                            <a href="https://egigibran.github.io/kerenyes-chicken" target="_blank" class="primary-btn" style="padding: 6px 18px; font-size: 13px; background: #db00ff; color: #fff; border-radius: 20px; text-decoration: none;">Kunjungi Website <i class="fa fa-external-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Work Experience 1 -->
-                <div class="col-lg-6 mb-4">
-                    <div class="portfolio-card">
-                        <h3>Work Experience</h3>
-                        <h5>BNP MEDIA PRINTING — Design (2017 – 2018)</h5>
-                        <p>Bertanggung jawab dalam pembuatan materi visual dan desain cetak sesuai dengan kebutuhan produksi perusahaan.</p>
-                    </div>
-                </div>
-
-                <!-- Work Experience 2 -->
-                <div class="col-lg-6 mb-4">
-                    <div class="portfolio-card">
-                        <h3>Work Experience</h3>
-                        <h5>PT. SINAR JAYA PRAKARSA — Roll Produksi (2020 – 2023)</h5>
-                        <p>Mengelola proses operasional mesin produksi secara sistematis dan menjaga standar kualitas kerja di bawah tekanan operasional.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Experience & Portfolio Section End -->
-
-    <!-- Project Video Showcase Section Begin -->
-    <section class="clean-section" style="background-color: #fafafa;" id="showcase">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center" style="margin-bottom: 40px;">
-                    <span style="color: #db00ff; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Portfolio Media</span>
-                    <h2 style="color: #111; font-size: 34px; font-weight: 700; margin-top: 5px;">Project Videos & Showcase</h2>
-                </div>
-            </div>
-            
-            <div class="row">
-                <!-- Item 1: YouTube -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="video-showcase-item">
-                        <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #111;">YouTube Project Video</h4>
-                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Tonton video dokumentasi atau presentasi tugas yang telah dikerjakan.</p>
-                        <a href="https://www.youtube.com/watch?v=oKOVpGQxusU" class="play-btn video-popup" target="_blank"><i class="fa fa-play"></i></a>
-                    </div>
-                </div>
-
-                <!-- Item 2: Facebook 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="video-showcase-item">
-                        <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #111;">Facebook Video 1</h4>
-                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Akses video aktivitas dan portofolio melalui tautan Facebook.</p>
-                        <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" class="play-btn" target="_blank"><i class="fa fa-facebook"></i></a>
-                    </div>
-                </div>
-
-                <!-- Item 3: Facebook 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="video-showcase-item">
-                        <h4 style="font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #111;">Facebook Video 2</h4>
-                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Akses video publikasi tambahan melalui tautan Facebook.</p>
-                        <a href="https://web.facebook.com/share/v/1DBygYzqRV/" class="play-btn" target="_blank"><i class="fa fa-facebook"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Project Video Showcase Section End -->
-
-    <!-- Footer Section Begin -->
-    <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png" style="background-color: #111; padding: 60px 0 30px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="footer__address">
-                        <ul>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <p>Phone</p>
-                                <h6>0812-9502-2846</h6>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope"></i>
-                                <p>Email</p>
-                                <h6>dekuizuku811@gmail.com</h6>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 offset-lg-1 col-md-6 mb-4">
-                    <div class="footer__social">
-                        <h2>Portfolio</h2>
-                        <div class="footer__social__links" style="margin-top: 15px;">
-                            <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="https://github.com" target="_blank"><i class="fa fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 mb-4">
-                    <div class="footer__newslatter">
-                        <h4>Stay With Me</h4>
-                        <form action="#">
-                            <input type="text" placeholder="Email">
-                            <button type="submit"><i class="fa fa-send-o"></i></button>
-                        </form>
-                    </div>
-                </div>
+            <div class="flex md:justify-end space-x-4">
+                <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://twitter.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
 </body>
-
 </html>
