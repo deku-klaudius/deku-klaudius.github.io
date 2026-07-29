@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Klaudius Oe Naimnou - Portfolio">
+    <meta name="keywords" content="Portfolio, Web Developer, CodeIgniter, PHP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Klaudius Oe Naimnou | About & Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="css/nowfont.css" type="text/css">
+    <link rel="stylesheet" href="css/rockville.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- Custom Professional Portfolio Styling -->
+    <style>
+        .clean-section {
+            background-color: #ffffff;
+            padding: 90px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .portfolio-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            border-left: 4px solid #db00ff;
+            height: 100%;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(219,0,255,0.12);
+            background: #ffffff;
+        }
+        .portfolio-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #111;
+        }
+        .portfolio-card h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #db00ff;
+            margin-bottom: 12px;
+        }
+        .portfolio-card p, .portfolio-card li {
+            color: #555555;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .portfolio-card ul {
+            padding-left: 18px;
+            margin-bottom: 0;
+        }
+        .skill-badge {
+            display: inline-block;
+            background: #f1e6f5;
+            color: #db00ff;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 5px 5px 5px 0;
+            transition: all 0.2s ease;
+        }
+        .skill-badge:hover {
+            background: #db00ff;
+            color: #fff;
+        }
+        .video-showcase-item {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .video-showcase-item:hover {
+            border-color: #db00ff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .video-showcase-item a.play-btn {
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: #db00ff;
+            color: #fff;
+            border-radius: 50%;
+            line-height: 55px;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .video-showcase-item a.play-btn:hover {
+            background: #111;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body style="background-color: #ffffff !important; color: #222222;">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header header--normal" style="background-color: #111;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt="Logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li><a href="./index.html">Home</a></li>
+                                <li class="active"><a href="./about.html">About</a></li>
+                                <li><a href="./contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header__right__social">
+                            <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="https://github.com" target="_blank"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option" style="background: #f9f9f9; padding: 30px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <span>About</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- About Profile Section Begin -->
+    <section class="clean-section" id="about-me">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about__pic" style="text-align: center;">
+                        <img src="img/about/about.png" alt="Klaudius Oe Naimnou" style="border-radius: 10px; max-width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about__text" style="padding-left: 15px;">
+                        <div class="section-title" style="margin-bottom: 20px;">
+                            <h2 style="color: #db00ff; font-size: 18px; font-weight: 600; text-transform: uppercase; margin-bottom: 5px;">Klaudius Oe Naimnou</h2>
+                            <h1 style="color: #111; font-size: 42px; font-weight: 700;">About me</h1>
+                        </div>
+                        <p style="color: #555; font-size: 16px; line-height: 1.8; margin-bottom: 30px;">
+                            Mahasiswa Manajemen Informatika dengan fokus pengembangan web. Memiliki antusiasme tinggi dalam membangun antarmuka web menggunakan HTML5 dan CSS3, serta tengah mendalami pengembangan back-end berbasis PHP, CodeIgniter 4, dan manajemen basis data MySQL. Berkomitmen untuk terus mengasah kemampuan teknis dan berkontribusi secara optimal dalam tim.
+                        </p>
+                        <a href="contact.html" class="primary-btn" style="background: #db00ff; color: #fff; padding: 12px 30px; border-radius: 30px; font-weight: 600; display: inline-block; transition: all 0.3s; text-decoration: none;">CONTACT ME</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Profile Section End -->
+
+    <!-- Skills & Expertise Section Begin -->
+    <section class="clean-section" style="background-color: #fafafa;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" style="margin-bottom: 50px;">
+                    <div class="section-title">
+                        <h2 style="color: #db00ff; font-size: 18px; font-weight: 600; text-transform: uppercase;">Expertise</h2>
+                        <h1 style="color: #111; font-size: 38px; font-weight: 700;">Skills & Competencies</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Hard Skills -->
+                <div class="col-lg-6 mb-4">
+                    <div class="portfolio-card">
+                        <h3><i class="fa fa-code" style="color: #db00ff; margin-right: 10px;"></i> Hard Skills</h3>
+                        <div style="margin-top: 15px;">
+                            <span class="skill-badge">CodeIgniter 4</span>
+                            <span class="skill-badge">PHP</span>
+                            <span class="skill-badge">HTML5</span>
+                            <span class="skill-badge">MySQL</span>
+                            <span class="skill-badge">CSS3</span>
+                            <span class="skill-badge">AJAX</span>
+                            <span class="skill-badge">Git</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Soft Skills -->
+                <div class="col-lg-6 mb-4">
+                    <div class="portfolio-card">
+                        <h3><i class="fa fa-users" style="color: #db00ff; margin-right: 10px;"></i> Soft Skills</h3>
+                        <div style="margin-top: 15px;">
+                            <span class="skill-badge">Koordinasi Tim</span>
+                            <span class="skill-badge">Pemecahan Masalah</span>
+                            <span class="skill-badge">Inisiatif & Mandiri</span>
+                            <span class="skill-badge">Perhatian terhadap Detail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills & Expertise Section End -->
+
+    <!-- Experience & Portfolio Section Begin -->
+    <section class="clean-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" style="margin-bottom: 50px;">
+                    <div class="section-title">
+                        <h2 style="color: #db00ff; font-size: 18px; font-weight: 600; text-transform: uppercase;">Track Record</h2>
+                        <h1 style="color: #111; font-size: 38px; font-weight: 700;">Experience & Projects</h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Organizational Experience -->
+                <div class="col-lg-6 mb-4">
+                    <div class="portfolio-card">
+                        <h3>Organizational Experience</h3>
+                        <h5>Anggota / Pengurus, UKM TIMEKOVI</h5>
+                        <p>Aktif berpartisipasi dalam kegiatan organisasi, mengasah keterampilan komunikasi, koordinasi tim, dan tanggung jawab kolektif.</p>
+                    </div>
+                </div>
+
+<!-- Project Experience -->
+                <div class="col-lg-6 mb-4">
+                    <div class="portfolio-card">
+                        <h3>Project Experience</h3>
+                        <h5>KERENYES CHICKEN (Project Web Development)</h5>
+                        <ul>
+                            <li>Mengembangkan purwarupa dan antarmuka web fungsional menggunakan HTML5 dan CSS3.</li>
+                            <li>Menerapkan sistem pengelolaan basis data MySQL dan integrasi back-end sederhana untuk mendukung fungsionalitas aplikasi.</li>
+                            <li>Menguji dan mendokumentasikan hasil pengembangan antarmuka web secara berkala.</li>
+                        </ul>
+                        <!-- Tombol atau Link Menuju Website -->
+                        <div style="margin-top: 15px;">
+                            <a href="https://egigibran.github.io/kerenyes-chicken" target="_blank" class="primary-btn" style="padding: 6px 20px; font-size: 14px;">Kunjungi Website <i class="fa fa-external-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experience 1 -->
+                <div class="col-lg-6 mb-4">
+                    <div class="portfolio-card">
+                        <h3>Work Experience</h3>
+                        <h5>BNP MEDIA PRINTING — Design (2017 – 2018)</h5>
+                        <p>Bertanggung jawab dalam pembuatan materi visual dan desain cetak sesuai dengan kebutuhan produksi perusahaan.</p>
+                    </div>
+                </div>
+
+                <!-- Work Experience 2 -->
+                <div class="col-lg-6 mb-4">
+                    <div class="portfolio-card">
+                        <h3>Work Experience</h3>
+                        <h5>PT. SINAR JAYA PRAKARSA — Roll Produksi (2020 – 2023)</h5>
+                        <p>Mengelola proses operasional mesin produksi secara sistematis dan menjaga standar kualitas kerja di bawah tekanan operasional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience & Portfolio Section End -->
+
+    <!-- Project Video Showcase Section Begin -->
+    <section class="clean-section" style="background-color: #fafafa;" id="showcase">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" style="margin-bottom: 50px;">
+                    <div class="section-title">
+                        <h2 style="color: #db00ff; font-size: 18px; font-weight: 600; text-transform: uppercase;">Portfolio Media</h2>
+                        <h1 style="color: #111; font-size: 38px; font-weight: 700;">Project Videos & Showcase</h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Item 1: YouTube -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="video-showcase-item">
+                        <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #111;">YouTube Project Video</h4>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Tonton video dokumentasi atau presentasi tugas yang telah dikerjakan.</p>
+                        <a href="https://www.youtube.com/watch?v=oKOVpGQxusU" class="play-btn video-popup" target="_blank"><i class="fa fa-play"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 2: Facebook 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="video-showcase-item">
+                        <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #111;">Facebook Video 1</h4>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Akses video aktivitas dan portofolio melalui tautan Facebook.</p>
+                        <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" class="play-btn" target="_blank"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 3: Facebook 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="video-showcase-item">
+                        <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 10px; color: #111;">Facebook Video 2</h4>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Akses video publikasi tambahan melalui tautan Facebook.</p>
+                        <a href="https://web.facebook.com/share/v/1DBygYzqRV/" class="play-btn" target="_blank"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Project Video Showcase Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png" style="background-color: #111;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer__address">
+                        <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <p>Phone</p>
+                                <h6>0812-9502-2846</h6>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <p>Email</p>
+                                <h6>dekuizuku811@gmail.com</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 col-md-6 mb-4">
+                    <div class="footer__social">
+                        <h2>Portfolio</h2>
+                        <div class="footer__social__links">
+                            <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="https://github.com" target="_blank"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 mb-4">
+                    <div class="footer__newslatter">
+                        <h4>Stay With me</h4>
+                        <form action="#">
+                            <input type="text" placeholder="Email">
+                            <button type="submit"><i class="fa fa-send-o"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
