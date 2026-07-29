@@ -3,156 +3,182 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Klaudius Oe Naimnou - Contact Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klaudius Oe Naimnou | Hubungi Saya</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        rajdhani: ['Rajdhani', 'sans-serif'],
+                    },
                     colors: {
-                        darkBg: '#0b0f19',
-                        cardBg: '#111827',
-                        accentBlue: '#3b82f6',
-                        neonBlue: '#60a5fa',
+                        darkBg: '#050b14',
+                        cardBg: '#0b1329',
+                        neonBlue: '#3b82f6',
+                        neonCyan: '#06b6d4',
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        body { font-family: 'Rajdhani', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
-        .neon-glow {
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #050b14;
+            color: #ffffff;
+            overflow-x: hidden;
         }
         .lightning-bg {
-            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0b0f19 80%);
+            background: radial-gradient(circle at 20% 30%, rgba(29, 78, 216, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.1) 0%, transparent 40%),
+                        #050b14;
             position: relative;
-            overflow: hidden;
+        }
+        .glow-box {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.4s ease;
+        }
+        .glow-box:hover {
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.4);
+            transform: scale(1.02);
+            border-color: rgba(59, 130, 246, 0.7);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
     </style>
 </head>
 
-<body class="lightning-bg min-h-screen">
+<body class="lightning-bg min-h-screen flex flex-col justify-between">
 
-    <!-- Navbar Section -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-blue-900/40">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#050b14]/90 backdrop-blur-md border-b border-blue-900/30">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="./index.html" class="text-2xl font-bold tracking-wider text-white">D_PICT<span class="text-blue-500">.</span></a>
-            <nav class="hidden md:flex items-center space-x-8 font-medium text-lg">
+            <a href="./index.html" class="text-2xl font-bold tracking-wider text-white glow-text">
+                D_PICT<span class="text-blue-500">.</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-lg font-medium">
                 <a href="./index.html" class="text-gray-300 hover:text-blue-400 transition">Home</a>
                 <a href="./about.html" class="text-gray-300 hover:text-blue-400 transition">Tentang</a>
-                <a href="./contact.html" class="text-blue-400 font-semibold">Hubungi Saya</a>
+                <a href="./contact.html" class="text-blue-400 font-semibold border-b-2 border-blue-500 pb-1">Hubungi Saya</a>
             </nav>
             <div>
-                <a href="./contact.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-blue-500/30 hover:scale-105 transition transform inline-block">Get in Touch</a>
+                <a href="./contact.html" class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300">
+                    Get in Touch
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Spacing for fixed header -->
-    <div class="pt-32"></div>
+    <!-- Main Content Container with generous spacing -->
+    <main class="flex-grow pt-32 pb-24 space-y-24">
 
-    <!-- CONTACT SECTION -->
-    <section class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Let's Connect</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Hubungi Saya</h2>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <!-- Contact Info -->
-            <div class="bg-cardBg p-8 rounded-2xl neon-glow space-y-8">
-                <h3 class="text-2xl font-bold text-white">Informasi Kontak</h3>
-                <p class="text-gray-300">Jangan ragu untuk menghubungi saya untuk kolaborasi, penawaran proyek, atau sekadar berdiskusi.</p>
-                <div class="space-y-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 flex-shrink-0">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-gray-400">Phone / WhatsApp</h4>
-                            <p class="text-white font-medium">0812-9502-2846</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 flex-shrink-0">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-gray-400">Email</h4>
-                            <p class="text-white font-medium">dekuizuku@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 bg-blue-600/20 border border-blue-500/40 rounded-xl flex items-center justify-center text-blue-400 flex-shrink-0">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-sm font-bold text-gray-400">Lokasi Kampus / Domisili</h4>
-                            <p class="text-white font-medium">LP3I Jakarta Pusat (Kampus Utama)</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Map Section -->
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="glow-box rounded-2xl overflow-hidden p-2 bg-cardBg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24021200216!2d106.75947842363191!3d-6.229741271101859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid"
+                    height="400" style="border:0; width: 100%; border-radius: 0.75rem;" allowfullscreen="" loading="lazy"></iframe>
             </div>
+        </section>
 
-            <!-- Contact Form & Map -->
-            <div class="lg:col-span-2 space-y-8">
-                <div class="bg-cardBg p-8 rounded-2xl neon-glow">
-                    <h3 class="text-2xl font-bold text-white mb-6">Kirim Pesan</h3>
-                    <form action="#" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2">Nama Lengkap</label>
-                                <input type="text" placeholder="Masukkan nama Anda" class="w-full bg-[#0b0f19] border border-blue-900/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition">
+        <!-- Contact Form & Info Section -->
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Info Kontak -->
+                <div class="glow-box bg-cardBg rounded-2xl p-8 space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white glow-text">Contact Info</h2>
+                        <p class="text-gray-400 text-sm mt-2">Jangan ragu untuk menghubungi saya untuk kolaborasi atau pertanyaan project.</p>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-blue-600/20 border border-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 shrink-0">
+                                <i class="fa fa-map-marker"></i>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                                <input type="email" placeholder="nama@email.com" class="w-full bg-[#0b0f19] border border-blue-900/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition">
+                                <h5 class="font-bold text-white">Address</h5>
+                                <p class="text-gray-400 text-sm">Jakarta, Indonesia</p>
                             </div>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-blue-600/20 border border-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 shrink-0">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white">Hotline</h5>
+                                <span class="text-gray-400 text-sm">0812-9502-2846</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-blue-600/20 border border-blue-500/30 rounded-lg flex items-center justify-center text-blue-400 shrink-0">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white">Email</h5>
+                                <p class="text-gray-400 text-sm">dekuizuku@gmail.com</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Form Kirim Pesan -->
+                <div class="lg:col-span-2 glow-box bg-cardBg rounded-2xl p-8 space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white glow-text">Get in Touch</h2>
+                        <p class="text-gray-400 text-sm mt-2">Silakan isi formulir di bawah ini untuk mengirimkan pesan secara langsung.</p>
+                    </div>
+                    <form action="#" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="text" placeholder="Name" class="bg-[#050b14] border border-blue-900/60 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                            <input type="text" placeholder="Email" class="bg-[#050b14] border border-blue-900/60 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                            <input type="text" placeholder="Website" class="bg-[#050b14] border border-blue-900/60 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Pesan</label>
-                            <textarea rows="5" placeholder="Tuliskan pesan atau detail proyek Anda..." class="w-full bg-[#0b0f19] border border-blue-900/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/30 transition transform hover:scale-[1.01]">Kirim Pesan Sekarang</button>
+                        <textarea placeholder="Comment / Message" rows="5" class="w-full bg-[#050b14] border border-blue-900/60 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition"></textarea>
+                        <button type="submit" class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition duration-300">
+                            SEND MESSAGE
+                        </button>
                     </form>
                 </div>
-
-                <!-- Google Maps Embed -->
-                <div class="bg-cardBg p-4 rounded-2xl neon-glow">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24021200216!2d106.75947842363191!3d-6.229741271101859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-cardBg border-t border-gray-800/80 py-12 mt-24">
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#03070f] border-t border-blue-900/30 py-12">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div>
-                <h3 class="text-xl font-bold text-white mb-2">Klaudius Oe Naimnou</h3>
-                <p class="text-gray-400 text-sm">Web Developer & Mahasiswa Manajemen Informatika.</p>
+            <div class="space-y-3">
+                <h3 class="text-xl font-bold text-white glow-text">Klaudius Oe Naimnou</h3>
+                <p class="text-gray-400 text-sm">Mahasiswa Manajemen Informatika & Web Developer.</p>
             </div>
-            <div class="text-left md:text-center">
-                <p class="text-gray-300 text-sm mb-1"><i class="fa-solid fa-phone text-blue-400 mr-2"></i> Phone: 0812-9502-2846</p>
-                <p class="text-gray-300 text-sm"><i class="fa-solid fa-envelope text-blue-400 mr-2"></i> Email: dekuizuku@gmail.com</p>
+            <div class="space-y-2 text-sm text-gray-300">
+                <p><i class="fa fa-phone text-blue-400 mr-2"></i> Phone: 0812-9502-2846</p>
+                <p><i class="fa fa-envelope text-blue-400 mr-2"></i> Email: dekuizuku@gmail.com</p>
             </div>
-            <div class="flex md:justify-end space-x-4">
-                <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://instagram.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://youtube.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://twitter.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="w-10 h-10 bg-blue-950 border border-blue-800/60 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+            <div class="flex space-x-4 md:justify-end">
+                <a href="https://www.facebook.com" target="_blank" class="w-10 h-10 bg-blue-950/80 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="w-10 h-10 bg-blue-950/80 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank" class="w-10 h-10 bg-blue-950/80 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa fa-youtube"></i></a>
+                <a href="https://twitter.com" target="_blank" class="w-10 h-10 bg-blue-950/80 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="w-10 h-10 bg-blue-950/80 border border-blue-500/30 rounded-full flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition"><i class="fa fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
 </body>
+
 </html>
