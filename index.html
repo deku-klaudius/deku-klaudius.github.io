@@ -255,18 +255,300 @@
         </div>
     </section>
 
-<!-- 5. GALERI FOTOGRAFI SECTION (QR Code & Link Instagram) -->
-    <section id="galeri" class="py-24 px-6 max-w-7xl mx-auto relative z-10 mb-28">
-        <div class="text-center space-y-3 mb-16">
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D_Pict | Portofolio - Klaudius Oe Naimnou</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#05070b',
+                        cardBg: '#0f172a',
+                        accentBlue: '#3b82f6',
+                        deepBlue: '#1e3a8a',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Animasi Neon Kilat / Listrik Background */
+        @keyframes electricGlow {
+            0% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+            100% { opacity: 0.3; transform: scale(1); }
+        }
+        .electric-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(30,58,138,0.05) 50%, transparent 70%);
+            animation: electricGlow 8s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* Efek Cahaya / Glow Mengelilingi Section */
+        .section-glow {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            transition: all 0.4s ease;
+        }
+        .section-glow:hover {
+            box-shadow: 0 0 45px rgba(59, 130, 246, 0.35);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-accentBlue selection:text-white relative overflow-x-hidden">
+
+    <!-- Background Elemen Animasi Kilat/Listrik -->
+    <div class="electric-bg top-10 left-10"></div>
+    <div class="electric-bg top-1/3 right-10" style="animation-delay: 3s;"></div>
+    <div class="electric-bg bottom-20 left-1/4" style="animation-delay: 5s;"></div>
+
+    <!-- NAVBAR (Responsif dengan Hamburger Menu untuk HP) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-black tracking-wider text-white">D_PICT<span class="text-accentBlue">.</span></a>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex space-x-10 text-base font-semibold text-gray-300">
+                <a href="index.html" class="hover:text-accentBlue transition">Home</a>
+                <a href="about.html" class="hover:text-accentBlue transition">About</a>
+                <a href="contact.html" class="hover:text-accentBlue transition">Contact</a>
+            </div>
+            <a href="contact.html" class="hidden md:inline-block px-6 py-2.5 rounded-full bg-accentBlue text-white font-medium hover:bg-deepBlue transition shadow-lg shadow-accentBlue/30 hover:scale-105">Get in Touch</a>
+            
+            <!-- Tombol Hamburger Mobile -->
+            <button id="menu-btn" aria-label="Menu Utama" class="md:hidden text-gray-300 hover:text-accentBlue focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-800 px-6 py-6 space-y-4">
+            <a href="index.html" class="block text-base font-semibold text-gray-300 hover:text-accentBlue transition">Home</a>
+            <a href="about.html" class="block text-base font-semibold text-gray-300 hover:text-accentBlue transition">About</a>
+            <a href="contact.html" class="block text-base font-semibold text-gray-300 hover:text-accentBlue transition">Contact</a>
+            <div class="pt-2">
+                <a href="contact.html" class="block text-center w-full py-2.5 rounded-full bg-accentBlue text-white font-medium hover:bg-deepBlue transition shadow-lg shadow-accentBlue/30">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Script sederhana untuk Toggle Menu HP -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- 1. BERANDA SECTION -->
+    <section id="beranda" class="pt-36 sm:pt-44 pb-20 sm:pb-32 px-4 sm:px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
+        <div class="md:w-1/2 space-y-6 text-center md:text-left">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-accentBlue/10 text-accentBlue border border-accentBlue/20">Mahasiswa LP3I Jakarta Pusat (Kampus Utama)</span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                Membangun Generasi Siap Kerja Melalui Konsep <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentBlue to-blue-400">Link and Match</span>
+            </h1>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                Latar belakang pendirian LP3I didasari oleh adanya kesenjangan antara dunia pendidikan dan dunia kerja, di mana banyak lulusan sekolah atau kuliah belum siap pakai dan tidak sesuai dengan kebutuhan industri. Pendiri melihat tingginya angka pengangguran akibat ketidakcocokan keterampilan. Konsep "Link and Match" dan porsi praktik yang besar dihadirkan untuk mengatasi masalah tersebut.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4">
+                <a href="about.html" class="px-8 py-3.5 rounded-xl bg-accentBlue font-semibold text-white hover:bg-deepBlue transition text-center shadow-lg shadow-accentBlue/30 hover:scale-105 duration-300">Jelajahi Tentang</a>
+                <a href="contact.html" class="px-8 py-3.5 rounded-xl bg-cardBg border border-gray-700 font-semibold text-gray-200 hover:border-accentBlue transition text-center hover:scale-105 duration-300">Hubungi Saya</a>
+            </div>
+        </div>
+        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center w-full">
+            <div class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden border-2 border-accentBlue/40 shadow-2xl shadow-accentBlue/30 bg-cardBg flex flex-col items-center justify-center p-6 sm:p-8 hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-darkBg to-darkBg"></div>
+                
+                <!-- SLOT TEMPAT LOGO KAMPUS -->
+                <div class="relative z-10 text-center space-y-4">
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-2xl bg-white/5 border border-accentBlue/30 flex items-center justify-center p-3 shadow-lg">
+                        <img src="img/Logo_LP3I.png" alt="Logo LP3I Jakarta Pusat" class="max-h-full max-w-full object-contain filter drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
+                    </div>
+                    <div class="bg-darkBg/90 px-4 sm:px-6 py-3 rounded-xl border border-accentBlue/30 backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base font-bold text-white">LP3I Jakarta Pusat</h3>
+                        <p class="text-[11px] sm:text-xs text-accentBlue font-medium mt-1">Kampus Utama - Vokasi & Penempatan Kerja</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. KAMPUS UTAMA & DETAIL KAMPUS SECTION -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto relative z-10 mb-16 sm:mb-28">
+        <div class="p-6 sm:p-10 rounded-3xl bg-cardBg section-glow">
+            <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-accentBlue/10 border border-accentBlue/30 flex items-center justify-center text-accentBlue text-3xl sm:text-4xl flex-shrink-0">
+                    <i class="fa-solid fa-university"></i>
+                </div>
+                <div class="space-y-3 text-center md:text-left">
+                    <span class="text-accentBlue text-xs font-bold uppercase tracking-widest">Informasi Akademik</span>
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">LP3I Jakarta Pusat - Kampus Utama</h2>
+                    <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                        Lembaga Pendidikan Vokasi terkemuka yang berfokus pada penempatan kerja dan keahlian praktis siap industri. Sebagai bagian dari Kampus Utama Jakarta Pusat, kurikulum dirancang secara spesifik untuk menjembatani kebutuhan dunia kerja nyata melalui metode pembelajaran vokasi berstandar tinggi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HARD SKILLS & SOFT SKILLS SECTION -->
+    <section id="skills" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+        <div class="text-center space-y-3 mb-12 sm:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold">Keahlian (<span class="text-accentBlue">Skills</span>)</h2>
+            <p class="text-gray-400">Hard Skills & Soft Skills yang dikuasai</p>
+        </div>
+
+        <!-- Hard Skills Grid -->
+        <h3 class="text-xl font-bold mb-6 text-accentBlue flex items-center gap-2"><i class="fa-solid fa-code"></i> Hard Skills</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-16">
+            <!-- 1. CodeIgniter 4 -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">CodeIgniter 4</h4>
+            </div>
+            <!-- 2. PHP -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">PHP</h4>
+            </div>
+            <!-- 3. HTML5 -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">HTML5</h4>
+            </div>
+            <!-- 4. MySQL -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">MySQL</h4>
+            </div>
+            <!-- 5. CSS3 -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-brands fa-css3-alt"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">CSS3</h4>
+            </div>
+            <!-- 6. AJAX -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">AJAX</h4>
+            </div>
+            <!-- 7. Git -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-brands fa-git-alt"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">Git</h4>
+            </div>
+            <!-- 8. NODE.JS -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-brands fa-node-js"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">NODE.JS</h4>
+            </div>
+            <!-- 9. TAILWIND CSS -->
+            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group col-span-2 sm:col-span-3 md:col-span-2">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+                    <i class="fa-solid fa-wind"></i>
+                </div>
+                <h4 class="font-bold text-xs sm:text-sm">TAILWIND CSS</h4>
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <h3 class="text-xl font-bold mb-6 text-accentBlue flex items-center gap-2"><i class="fa-solid fa-users"></i> Soft Skills</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div class="p-5 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300">
+                <h4 class="font-bold text-white text-sm sm:text-base">Koordinasi Tim</h4>
+            </div>
+            <div class="p-5 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300">
+                <h4 class="font-bold text-white text-sm sm:text-base">Pemecahan Masalah</h4>
+            </div>
+            <div class="p-5 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300">
+                <h4 class="font-bold text-white text-sm sm:text-base">Inisiatif & Mandiri</h4>
+            </div>
+            <div class="p-5 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300">
+                <h4 class="font-bold text-white text-sm sm:text-base">Perhatian terhadap Detail</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROJECT WEBSITE SECTION -->
+    <section id="project" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+        <div class="text-center space-y-3 mb-12 sm:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold">Web <span class="text-accentBlue">Projects</span></h2>
+            <p class="text-gray-400">Proyek aplikasi web yang telah dirancang dan dikembangkan</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <!-- Project 1 -->
+            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
+                <div class="h-48 sm:h-60 bg-gradient-to-r from-deepBlue to-accentBlue flex items-center justify-center text-white text-xl sm:text-3xl font-black text-center px-4">
+                    D_Pict Portofolio Web
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">D_Pict Portofolio Utama</h3>
+                    <p class="text-gray-300 text-sm flex-grow leading-relaxed">Website portofolio pribadi interaktif berfitur lengkap yang menampilkan profil mahasiswa, galeri foto, galeri video, dan sertifikasi.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">HTML5</span>
+                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
+                <div class="h-48 sm:h-60 bg-gradient-to-r from-blue-900 to-deepBlue flex items-center justify-center text-white text-xl sm:text-3xl font-black text-center px-4">
+                    CI4 & MySQL System
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">Sistem Informasi Manajemen Data</h3>
+                    <p class="text-gray-300 text-sm flex-grow leading-relaxed">Aplikasi web dinamis berbasis CodeIgniter 4 dan MySQL untuk manajemen data terintegrasi, autentikasi aman, dan performa optimal.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">PHP</span>
+                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">CodeIgniter 4</span>
+                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. GALERI FOTOGRAFI SECTION -->
+    <section id="galeri" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+        <div class="text-center space-y-3 mb-12 sm:mb-16">
             <h2 class="text-3xl md:text-4xl font-bold">Galeri <span class="text-accentBlue">Fotografi</span></h2>
             <p class="text-gray-400">Scan QR Code atau klik kartu untuk melihat postingan Instagram</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             
-            <!-- QR Code 1 (Link 1) -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-5 justify-between">
+            <!-- QR Code 1 -->
+            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
                 <a href="https://www.instagram.com/p/DGCPcF8z7ME/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
-                    <img src="img/qr/qr-1.png.png" alt="QR Code Galeri 1" class="w-full h-44 object-contain group-hover:scale-105 transition duration-300">
+                    <img src="img/qr/qr-1.png.png" alt="QR Code Galeri 1" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #1</span>
@@ -277,10 +559,10 @@
                 </a>
             </div>
 
-            <!-- QR Code 2 (Link 2) -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-5 justify-between">
+            <!-- QR Code 2 -->
+            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
                 <a href="https://www.instagram.com/p/DF1k57CTv3e/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
-                    <img src="img/qr/qr-2.png.png" alt="QR Code Galeri 2" class="w-full h-44 object-contain group-hover:scale-105 transition duration-300">
+                    <img src="img/qr/qr-2.png.png" alt="QR Code Galeri 2" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #2</span>
@@ -291,10 +573,10 @@
                 </a>
             </div>
 
-            <!-- QR Code 3 (Link 3) -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-5 justify-between">
+            <!-- QR Code 3 -->
+            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
                 <a href="https://www.instagram.com/p/DGxC3kXpIZ6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
-                    <img src="img/qr/qr-3.png.png" alt="QR Code Galeri 3" class="w-full h-44 object-contain group-hover:scale-105 transition duration-300">
+                    <img src="img/qr/qr-3.png.png" alt="QR Code Galeri 3" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #3</span>
@@ -305,10 +587,10 @@
                 </a>
             </div>
 
-            <!-- QR Code 4 (Link 4) -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-5 justify-between">
+            <!-- QR Code 4 -->
+            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
                 <a href="https://www.instagram.com/p/DG0byhKTho1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
-                    <img src="img/qr/qr-4.png.png" alt="QR Code Galeri 4" class="w-full h-44 object-contain group-hover:scale-105 transition duration-300">
+                    <img src="img/qr/qr-4.png.png" alt="QR Code Galeri 4" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #4</span>
@@ -319,10 +601,10 @@
                 </a>
             </div>
 
-            <!-- QR Code 5 (Link 5) -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-5 justify-between">
+            <!-- QR Code 5 -->
+            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
                 <a href="https://www.instagram.com/p/DGo9hjgTSQj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
-                    <img src="img/qr/qr-5.png.png" alt="QR Code Galeri 5" class="w-full h-44 object-contain group-hover:scale-105 transition duration-300">
+                    <img src="img/qr/qr-5.png.png" alt="QR Code Galeri 5" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #5</span>
@@ -333,10 +615,10 @@
                 </a>
             </div>
 
-            <!-- QR Code 6 (Link 6) -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-5 justify-between">
+            <!-- QR Code 6 -->
+            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
                 <a href="https://www.instagram.com/p/DGMN8jezj4T/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
-                    <img src="img/qr/qr-6.png.png" alt="QR Code Galeri 6" class="w-full h-44 object-contain group-hover:scale-105 transition duration-300">
+                    <img src="img/qr/qr-6.png.png" alt="QR Code Galeri 6" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #6</span>
@@ -347,10 +629,10 @@
                 </a>
             </div>
 
-            <!-- QR Code 7 (Link 7) -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-5 justify-between">
+            <!-- QR Code 7 -->
+            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
                 <a href="https://www.instagram.com/p/DGGESvmTqT9/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
-                    <img src="img/qr/qr-7.png.png" alt="QR Code Galeri 7" class="w-full h-44 object-contain group-hover:scale-105 transition duration-300">
+                    <img src="img/qr/qr-7.png.png" alt="QR Code Galeri 7" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #7</span>
@@ -361,10 +643,10 @@
                 </a>
             </div>
 
-            <!-- QR Code 8 (Link 8) -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-5 justify-between">
+            <!-- QR Code 8 -->
+            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
                 <a href="https://www.instagram.com/p/DF69ffFTqwn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
-                    <img src="img/qr/qr-8.png.png" alt="QR Code Galeri 8" class="w-full h-44 object-contain group-hover:scale-105 transition duration-300">
+                    <img src="img/qr/qr-8.png.png" alt="QR Code Galeri 8" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #8</span>
@@ -378,14 +660,14 @@
         </div>
     </section>
 
-    <!-- 6. VIDEO PROJECT / TUGAS SECTION (5 Video: Facebook & YouTube) -->
-    <section id="video" class="py-24 px-6 max-w-7xl mx-auto relative z-10 mb-28">
-        <div class="text-center space-y-3 mb-16">
+    <!-- 6. VIDEO PROJECT / TUGAS SECTION -->
+    <section id="video" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+        <div class="text-center space-y-3 mb-12 sm:mb-16">
             <h2 class="text-3xl md:text-4xl font-bold">Video <span class="text-accentBlue">Project & Tugas</span></h2>
             <p class="text-gray-400">Kumpulan 5 video dokumentasi tugas akademik, presentasi, dan media sosial</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Video 1 (Facebook) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Video 1 -->
             <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
                 <div class="h-48 bg-blue-900/40 flex items-center justify-center relative">
                     <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-14 h-14 rounded-full bg-accentBlue text-white flex items-center justify-center text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
@@ -397,7 +679,7 @@
                     <h4 class="font-bold text-base mt-2 text-white">Dokumentasi Acara & Creative Visual</h4>
                 </div>
             </div>
-            <!-- Video 2 (YouTube) -->
+            <!-- Video 2 -->
             <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
                 <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://img.youtube.com/vi/FeHkgPk-YIg/hqdefault.jpg');">
                     <a href="https://www.youtube.com/watch?v=FeHkgPk-YIg&t=1s" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/40">
@@ -411,7 +693,7 @@
                     <h4 class="font-bold text-base mt-2 text-white">Mengenal Ransomware & Tips Phishing</h4>
                 </div>
             </div>
-            <!-- Video 3 (YouTube) -->
+            <!-- Video 3 -->
             <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
                 <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://img.youtube.com/vi/5EkjGZDtP0A/hqdefault.jpg');">
                     <a href="https://www.youtube.com/watch?v=5EkjGZDtP0A" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/40">
@@ -425,7 +707,7 @@
                     <h4 class="font-bold text-base mt-2 text-white">Nyari Makan di Jakarta! | Tanya Arah Warteg</h4>
                 </div>
             </div>
-            <!-- Video 4 (YouTube) -->
+            <!-- Video 4 -->
             <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
                 <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://img.youtube.com/vi/oKOVpGQxusU/hqdefault.jpg');">
                     <a href="https://www.youtube.com/watch?v=oKOVpGQxusU" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/40">
@@ -439,7 +721,7 @@
                     <h4 class="font-bold text-base mt-2 text-white">Tugas UAS - Rekayasa Instalasi Jaringan Kelompok 1</h4>
                 </div>
             </div>
-            <!-- Video 5 (YouTube Tambahan / Dokumentasi Proyek) -->
+            <!-- Video 5 -->
             <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col md:col-span-2 shadow-xl border border-white/5">
                 <div class="h-48 md:h-64 bg-gradient-to-r from-deepBlue to-accentBlue flex items-center justify-center relative">
                     <a href="https://www.youtube.com/watch?v=00JMeaQ5FbI" target="_blank" class="w-16 h-16 rounded-full bg-white text-accentBlue flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition z-10">
@@ -455,40 +737,40 @@
         </div>
     </section>
 
-    <!-- 7. SERTIFIKASI SECTION (Klik gambar membuka halaman detail satu gambar) -->
-    <section id="sertifikasi" class="py-24 px-6 max-w-7xl mx-auto relative z-10 mb-28">
-        <div class="text-center space-y-3 mb-16">
+    <!-- 7. SERTIFIKASI SECTION -->
+    <section id="sertifikasi" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+        <div class="text-center space-y-3 mb-12 sm:mb-16">
             <h2 class="text-3xl md:text-4xl font-bold">Sertifikasi & <span class="text-accentBlue">Kompetensi</span></h2>
             <p class="text-gray-400">Klik gambar sertifikat untuk melihat detail tampilan penuh</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
             <!-- Sertifikat 1 -->
-            <div class="p-6 rounded-3xl bg-cardBg section-glow hover:scale-105 duration-300 flex flex-col space-y-4">
-                <a href="detail-sertif.html?id=database-administrator" class="block h-56 rounded-2xl bg-gradient-to-br from-blue-900 via-deepBlue to-cardBg flex items-center justify-center text-center p-6 border border-accentBlue/30 group overflow-hidden relative">
+            <div class="p-5 sm:p-6 rounded-3xl bg-cardBg section-glow hover:scale-105 duration-300 flex flex-col space-y-4">
+                <a href="detail-sertif.html?id=database-administrator" class="block h-52 sm:h-56 rounded-2xl bg-gradient-to-br from-blue-900 via-deepBlue to-cardBg flex items-center justify-center text-center p-6 border border-accentBlue/30 group overflow-hidden relative">
                     <div class="absolute inset-0 bg-accentBlue/20 opacity-0 group-hover:opacity-100 transition"></div>
                     <div class="relative z-10">
-                        <i class="fa-solid fa-database text-5xl text-accentBlue mb-3"></i>
-                        <h4 class="text-white font-bold text-lg">Database Administrator</h4>
+                        <i class="fa-solid fa-database text-4xl sm:text-5xl text-accentBlue mb-3"></i>
+                        <h4 class="text-white font-bold text-base sm:text-lg">Database Administrator</h4>
                         <span class="text-xs text-accentBlue mt-2 inline-block underline">Klik untuk melihat detail sertifikat</span>
                     </div>
                 </a>
                 <div>
-                    <h3 class="font-bold text-xl text-white">Database Administrator</h3>
+                    <h3 class="font-bold text-lg sm:text-xl text-white">Database Administrator</h3>
                     <p class="text-sm text-gray-300 mt-1 leading-relaxed">Sertifikasi keahlian dalam perancangan skema relasional, optimasi query SQL, serta manajemen basis data tingkat lanjut.</p>
                 </div>
             </div>
             <!-- Sertifikat 2 -->
-            <div class="p-6 rounded-3xl bg-cardBg section-glow hover:scale-105 duration-300 flex flex-col space-y-4">
-                <a href="detail-sertif.html?id=tok-komputer" class="block h-56 rounded-2xl bg-gradient-to-br from-deepBlue via-blue-900 to-cardBg flex items-center justify-center text-center p-6 border border-accentBlue/30 group overflow-hidden relative">
+            <div class="p-5 sm:p-6 rounded-3xl bg-cardBg section-glow hover:scale-105 duration-300 flex flex-col space-y-4">
+                <a href="detail-sertif.html?id=tok-komputer" class="block h-52 sm:h-56 rounded-2xl bg-gradient-to-br from-deepBlue via-blue-900 to-cardBg flex items-center justify-center text-center p-6 border border-accentBlue/30 group overflow-hidden relative">
                     <div class="absolute inset-0 bg-accentBlue/20 opacity-0 group-hover:opacity-100 transition"></div>
                     <div class="relative z-10">
-                        <i class="fa-solid fa-certificate text-5xl text-accentBlue mb-3"></i>
-                        <h4 class="text-white font-bold text-lg">TOK (Teknik Operator Komputer)</h4>
+                        <i class="fa-solid fa-certificate text-4xl sm:text-5xl text-accentBlue mb-3"></i>
+                        <h4 class="text-white font-bold text-base sm:text-lg">TOK (Teknik Operator Komputer)</h4>
                         <span class="text-xs text-accentBlue mt-2 inline-block underline">Klik untuk melihat detail sertifikat</span>
                     </div>
                 </a>
                 <div>
-                    <h3 class="font-bold text-xl text-white">TOK (Teknik Operator Komputer)</h3>
+                    <h3 class="font-bold text-lg sm:text-xl text-white">TOK (Teknik Operator Komputer)</h3>
                     <p class="text-sm text-gray-300 mt-1 leading-relaxed">Sertifikasi kompetensi operasional sistem komputer perkantoran, manajemen sistem, dan produktivitas digital.</p>
                 </div>
             </div>
@@ -496,36 +778,36 @@
     </section>
 
     <!-- 8. WORK EXPERIENCE & ORGANIZATIONAL EXPERIENCE SECTION -->
-    <section id="pengalaman" class="py-24 px-6 max-w-4xl mx-auto relative z-10 mb-28">
-        <div class="text-center space-y-3 mb-16">
+    <section id="pengalaman" class="py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto relative z-10 mb-16 sm:mb-28">
+        <div class="text-center space-y-3 mb-12 sm:mb-16">
             <h2 class="text-3xl md:text-4xl font-bold">Work & <span class="text-accentBlue">Organization</span></h2>
             <p class="text-gray-400">Riwayat pengalaman kerja profesional dan organisasi kampus</p>
         </div>
 
-        <div class="space-y-8">
+        <div class="space-y-6 sm:space-y-8">
             <!-- Work 1 -->
-            <div class="p-8 rounded-3xl bg-cardBg section-glow relative pl-10 md:pl-12 hover:scale-[1.02] duration-300">
-                <div class="absolute left-0 top-0 bottom-0 w-3 bg-accentBlue rounded-l-3xl"></div>
+            <div class="p-6 sm:p-8 rounded-3xl bg-cardBg section-glow relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
+                <div class="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-accentBlue rounded-l-3xl"></div>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                    <h3 class="text-xl font-bold text-white">Bnp Media Printing, Design</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-white">Bnp Media Printing, Design</h3>
                     <span class="text-xs px-3 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold w-fit mt-1 md:mt-0">Jan 2017 - Feb 2018</span>
                 </div>
                 <p class="text-gray-300 text-sm leading-relaxed">Menangani bidang desain grafis, tata letak cetak media, serta operasional percetakan digital dan produksi media promosi.</p>
             </div>
             <!-- Work 2 -->
-            <div class="p-8 rounded-3xl bg-cardBg section-glow relative pl-10 md:pl-12 hover:scale-[1.02] duration-300">
-                <div class="absolute left-0 top-0 bottom-0 w-3 bg-deepBlue rounded-l-3xl"></div>
+            <div class="p-6 sm:p-8 rounded-3xl bg-cardBg section-glow relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
+                <div class="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-deepBlue rounded-l-3xl"></div>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                    <h3 class="text-xl font-bold text-white">PT. Sinar Jaya Prakarsa, Roll Produksi</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-white">PT. Sinar Jaya Prakarsa, Roll Produksi</h3>
                     <span class="text-xs px-3 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold w-fit mt-1 md:mt-0">Apr 2020 - Jul 2024</span>
                 </div>
                 <p class="text-gray-300 text-sm leading-relaxed">Bertanggung jawab pada bagian divisi roll produksi, memastikan kelancaran alur operasional, kontrol kualitas, dan efisiensi lini produksi industri.</p>
             </div>
             <!-- Organization -->
-            <div class="p-8 rounded-3xl bg-cardBg section-glow relative pl-10 md:pl-12 hover:scale-[1.02] duration-300">
-                <div class="absolute left-0 top-0 bottom-0 w-3 bg-blue-500 rounded-l-3xl"></div>
+            <div class="p-6 sm:p-8 rounded-3xl bg-cardBg section-glow relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
+                <div class="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-blue-500 rounded-l-3xl"></div>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                    <h3 class="text-xl font-bold text-white">Organisasi: UKM Timekovi</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-white">Organisasi: UKM Timekovi</h3>
                     <span class="text-xs px-3 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold w-fit mt-1 md:mt-0">2024 - 2026</span>
                 </div>
                 <p class="text-gray-300 text-sm leading-relaxed">Anggota aktif UKM Timekovi, berpartisipasi dalam berbagai kegiatan kolaboratif, pengembangan minat bakat, dan kepemimpinan.</p>
@@ -534,8 +816,8 @@
     </section>
 
     <!-- 9. FOOTER & KONTAK SECTION -->
-    <footer class="bg-[#030508] border-t border-gray-800 text-gray-400 py-16 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+    <footer class="bg-[#030508] border-t border-gray-800 text-gray-400 py-12 sm:py-16 px-4 sm:px-6 relative z-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-center">
             <div class="space-y-3">
                 <span class="text-2xl font-black tracking-wider text-white">D_PICT<span class="text-accentBlue">.</span></span>
                 <p class="text-sm">Portofolio Klaudius Oe Naimnou. Dibuat dengan desain Tailwind CSS.</p>
@@ -556,7 +838,7 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-900 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-900 text-center text-xs text-gray-500">
             &copy; 2026 D_Pict Portfolio. All rights reserved.
         </div>
     </footer>
