@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D_Pict | Portofolio - Klaudius Oe Naimnou</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
                     colors: {
                         darkBg: '#05070b',
                         cardBg: '#0f172a',
@@ -22,6 +30,15 @@
     </script>
     <!-- FontAwesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS (Animate on Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
     <style>
         /* Animasi Neon Kilat / Listrik Background */
         @keyframes electricGlow {
@@ -45,35 +62,79 @@
             }
         }
         /* Efek Cahaya / Glow Mengelilingi Section */
-        .section-glow {
+        .section-glow shadow-xl shadow-blue-900/10 dark:shadow-none {
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.12);
             border: 1px solid rgba(59, 130, 246, 0.2);
             transition: all 0.4s ease;
         }
-        .section-glow:hover {
-            box-shadow: 0 0 35px rgba(59, 130, 246, 0.3);
-            border-color: rgba(59, 130, 246, 0.4);
+        .section-glow shadow-xl shadow-blue-900/10 dark:shadow-none:hover {
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.4);
+            border-color: rgba(59, 130, 246, 0.5);
         }
+        .card-bg {
+            position: relative;
+            z-index: 1;
+        }
+        .card-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('img/abstract_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px);
+            opacity: 0.3;
+            z-index: -1;
+            border-radius: inherit;
+        }
+        html:not(.dark) .card-bg::before { display: none; }
     </style>
 </head>
-<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-accentBlue selection:text-white relative overflow-x-hidden">
+<body class="bg-white dark:bg-darkBg text-gray-900 dark:text-gray-100 font-sans antialiased selection:bg-accentBlue selection:text-black dark:text-white relative overflow-x-hidden min-h-screen">
 
-    <!-- Background Elemen Animasi Kilat/Listrik -->
-    <div class="electric-bg top-10 left-10"></div>
-    <div class="electric-bg top-1/3 right-10" style="animation-delay: 3s;"></div>
-    <div class="electric-bg bottom-20 left-1/4" style="animation-delay: 5s;"></div>
+    <!-- Static Image Backgrounds -->
+    <div class="fixed inset-0 w-full h-full z-0 bg-cover bg-center bg-no-repeat hidden dark:block" style="background-image: url('img/dark_bg.jpg');"></div>
+    <div class="fixed inset-0 w-full h-full z-0 bg-cover bg-center bg-no-repeat block dark:hidden" style="background-image: url('img/light_bg.jpg');"></div>
 
     <!-- NAVBAR (Responsif dengan Tombol Menu Mobile/Hamburger Opsional & Rapih) -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-darkBg/50 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="text-xl sm:text-2xl font-black tracking-wider text-white">D_PICT<span class="text-accentBlue">.</span></a>
-            <div class="hidden md:flex space-x-8 lg:space-x-10 text-base font-semibold text-gray-300">
-                <a href="index.html" class="hover:text-accentBlue transition">Home</a>
-                <a href="about.html" class="hover:text-accentBlue transition">About</a>
-                <a href="contact.html" class="hover:text-accentBlue transition">Contact</a>
+            <a href="index.html" class="text-xl sm:text-2xl font-black tracking-wider text-black dark:text-white">D_PICT<span class="text-accentBlue">.</span></a>
+            <div class="hidden md:flex space-x-8 lg:space-x-10 text-base font-semibold text-black dark:text-white">
+                <a href="index.html" class="text-black dark:text-white hover:text-accentBlue transition duration-300 relative group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-accentBlue rounded-full"></span>
+                </a>
+                <a href="about.html" class="hover:text-accentBlue transition duration-300 relative group">
+                    About
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accentBlue rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="contact.html" class="hover:text-accentBlue transition duration-300 relative group">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accentBlue rounded-full transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
-            <div class="flex items-center gap-3">
-                <a href="contact.html" class="px-4 sm:px-6 py-2 rounded-full bg-accentBlue text-white text-xs sm:text-sm font-medium hover:bg-deepBlue transition shadow-lg shadow-accentBlue/30 hover:scale-105">Get in Touch</a>
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" type="button"  class="hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-[#1e293b] border border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-accentBlue transition hover:scale-110 focus:outline-none shadow-lg">
+                <svg class="w-5 h-5 block dark:hidden text-black" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" /></svg>
+                <svg class="w-5 h-5 hidden dark:block text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>
+            </button>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-black dark:text-white hover:text-black dark:hover:text-white focus:outline-none transition">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/70 dark:bg-darkBg/50 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-4 flex flex-col text-center">
+                <a href="index.html" class="text-black dark:text-white font-semibold py-2 border-b border-gray-200 dark:border-gray-800">Home</a>
+                <a href="about.html" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white font-semibold py-2 border-b border-gray-200 dark:border-gray-800">About</a>
+                <a href="contact.html" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white font-semibold py-2 border-b border-gray-200 dark:border-gray-800">Contact</a>
+                <!-- Theme Toggle Mobile -->
+                <button id="theme-toggle-mobile" type="button"  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-[#1e293b] border border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-gray-300 dark:hover:bg-accentBlue transition focus:outline-none mx-auto mt-4 shadow-lg">
+                    <svg class="w-5 h-5 block dark:hidden text-black" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" /></svg>
+                    <svg class="w-5 h-5 hidden dark:block text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>
+                </button>
             </div>
         </div>
     </nav>
@@ -82,28 +143,28 @@
     <section id="beranda" class="pt-32 sm:pt-44 pb-20 sm:pb-32 px-4 sm:px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10 gap-10">
         <div class="md:w-1/2 space-y-5 text-center md:text-left">
             <span class="inline-block px-3 sm:px-4 py-1.5 rounded-full text-xs font-semibold bg-accentBlue/10 text-accentBlue border border-accentBlue/20">Mahasiswa LP3I Jakarta Pusat (Kampus Utama)</span>
-            <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug sm:leading-tight text-white">
+            <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-snug sm:leading-tight text-black dark:text-white">
                 Membangun Generasi Siap Kerja Melalui Konsep <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentBlue to-blue-400">Link and Match</span>
             </h1>
-            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            <p class="text-black dark:text-white text-sm sm:text-base leading-relaxed">
                 Latar belakang pendirian LP3I didasari oleh adanya kesenjangan antara dunia pendidikan dan dunia kerja, di mana banyak lulusan sekolah atau kuliah belum siap pakai dan tidak sesuai dengan kebutuhan industri. Pendiri melihat tingginya angka pengangguran akibat ketidakcocokan keterampilan. Konsep "Link and Match" dan porsi praktik yang besar dihadirkan untuk mengatasi masalah tersebut.
             </p>
             <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 sm:gap-4 pt-2">
-                <a href="about.html" class="px-6 sm:px-8 py-3 rounded-xl bg-accentBlue font-semibold text-sm text-white text-center hover:bg-deepBlue transition shadow-lg shadow-accentBlue/30 hover:scale-105 duration-300">Jelajahi Tentang</a>
-                <a href="contact.html" class="px-6 sm:px-8 py-3 rounded-xl bg-cardBg border border-gray-700 font-semibold text-sm text-gray-200 text-center hover:border-accentBlue transition hover:scale-105 duration-300">Hubungi Saya</a>
+                <a href="about.html" class="px-6 sm:px-8 py-3 rounded-xl bg-accentBlue font-semibold text-sm text-black dark:text-white text-center hover:bg-deepBlue transition shadow-lg shadow-accentBlue/30 hover:scale-105 duration-300">Jelajahi Tentang</a>
+                <a href="contact.html" class="px-6 sm:px-8 py-3 rounded-xl bg-white dark:bg-cardBg shadow-lg shadow-blue-500/10 border border-gray-300 dark:border-gray-700 font-semibold text-sm text-gray-800 dark:text-gray-200 text-center hover:border-accentBlue transition hover:scale-105 duration-300">Hubungi Saya</a>
             </div>
         </div>
         <div class="md:w-1/2 w-full flex justify-center">
-            <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-2 border-accentBlue/40 shadow-2xl shadow-accentBlue/30 bg-cardBg flex flex-col items-center justify-center p-6 sm:p-8 hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-darkBg to-darkBg"></div>
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.3" class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden border-2 border-accentBlue/30 shadow-2xl shadow-accentBlue/40 bg-white/90 dark:bg-cardBg/40 shadow-lg shadow-blue-500/10 backdrop-blur-xl card-bg flex flex-col items-center justify-center p-6 sm:p-8 hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-transparent to-transparent pointer-events-none"></div>
                 
                 <!-- SLOT TEMPAT LOGO KAMPUS -->
                 <div class="relative z-10 text-center space-y-3 sm:space-y-4">
                     <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-2xl bg-white/5 border border-accentBlue/30 flex items-center justify-center p-3 shadow-lg">
                         <img src="img/Logo_LP3I.png" alt="Logo LP3I Jakarta Pusat" class="max-h-full max-w-full object-contain filter drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
                     </div>
-                    <div class="bg-darkBg/90 px-4 sm:px-6 py-2 sm:py-3 rounded-xl border border-accentBlue/30 backdrop-blur-sm">
-                        <h3 class="text-sm sm:text-base font-bold text-white">LP3I Jakarta Pusat</h3>
+                    <div class="bg-white/70 dark:bg-darkBg/50 px-4 sm:px-6 py-2 sm:py-3 rounded-xl border border-accentBlue/30 backdrop-blur-sm">
+                        <h3 class="text-sm sm:text-base font-bold text-black dark:text-white">LP3I Jakarta Pusat</h3>
                         <p class="text-[11px] sm:text-xs text-accentBlue font-medium mt-0.5">Kampus Utama - Vokasi & Penempatan Kerja</p>
                     </div>
                 </div>
@@ -112,16 +173,16 @@
     </section>
 
     <!-- 2. KAMPUS UTAMA & DETAIL KAMPUS SECTION -->
-    <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto relative z-10 mb-16 sm:mb-28">
-        <div class="p-6 sm:p-10 rounded-3xl bg-cardBg section-glow">
+    <section class="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto relative z-10 mb-8 sm:mb-16">
+        <div data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-6 sm:p-10 rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none">
             <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-8 text-center md:text-left">
                 <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-accentBlue/10 border border-accentBlue/30 flex items-center justify-center text-accentBlue text-3xl sm:text-4xl flex-shrink-0">
                     <i class="fa-solid fa-university"></i>
                 </div>
                 <div class="space-y-2 sm:space-y-3">
-                    <span class="text-accentBlue text-xs font-bold uppercase tracking-widest">Informasi Akademik</span>
+                    <span class="text-accentBlue text-xs font-bold uppercase tracking-widest">Academic Information</span>
                     <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">LP3I Jakarta Pusat - Kampus Utama</h2>
-                    <p class="text-gray-300 leading-relaxed text-xs sm:text-sm md:text-base">
+                    <p class="text-black dark:text-white leading-relaxed text-xs sm:text-sm md:text-base">
                         Lembaga Pendidikan Vokasi terkemuka yang berfokus pada penempatan kerja dan keahlian praktis siap industri. Sebagai bagian dari Kampus Utama Jakarta Pusat, kurikulum dirancang secara spesifik untuk menjembatani kebutuhan dunia kerja nyata melalui metode pembelajaran vokasi berstandar tinggi.
                     </p>
                 </div>
@@ -130,74 +191,74 @@
     </section>
 
     <!-- 3. HARD SKILLS & SOFT SKILLS SECTION -->
-    <section id="skills" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+    <section id="skills" class="py-12 sm:py-16 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-8 sm:mb-16">
         <div class="text-center space-y-2 sm:space-y-3 mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Keahlian (<span class="text-accentBlue">Skills</span>)</h2>
-            <p class="text-gray-400 text-sm sm:text-base">Hard Skills & Soft Skills yang dikuasai</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">My <span class="text-accentBlue">Skills</span></h2>
+            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Hard Skills & Soft Skills Mastered</p>
         </div>
 
         <!-- Hard Skills Grid -->
         <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-accentBlue flex items-center gap-2"><i class="fa-solid fa-code"></i> Hard Skills</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
             <!-- 1. CodeIgniter 4 -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-solid fa-fire"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">CodeIgniter 4</h4>
             </div>
             <!-- 2. PHP -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-solid fa-code"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">PHP</h4>
             </div>
             <!-- 3. HTML5 -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group h-full flex flex-col justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-brands fa-html5"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">HTML5</h4>
             </div>
             <!-- 4. MySQL -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group h-full flex flex-col justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-solid fa-database"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">MySQL</h4>
             </div>
             <!-- 5. CSS3 -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group h-full flex flex-col justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-brands fa-css3-alt"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">CSS3</h4>
             </div>
             <!-- 6. AJAX -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group h-full flex flex-col justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-solid fa-bolt"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">AJAX</h4>
             </div>
             <!-- 7. Git -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group h-full flex flex-col justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-brands fa-git-alt"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">Git</h4>
             </div>
             <!-- 8. NODE.JS -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group h-full flex flex-col justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-brands fa-node-js"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">NODE.JS</h4>
             </div>
             <!-- 9. TAILWIND CSS -->
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300 group col-span-2 sm:col-span-3 md:col-span-2">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-white transition">
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 group col-span-2 sm:col-span-3 md:col-span-2 h-full flex flex-col justify-center">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mx-auto mb-3 sm:mb-4 text-xl sm:text-2xl group-hover:bg-accentBlue group-hover:text-black dark:group-hover:text-white transition">
                     <i class="fa-solid fa-wind"></i>
                 </div>
                 <h4 class="font-bold text-xs sm:text-sm">TAILWIND CSS</h4>
@@ -207,177 +268,138 @@
         <!-- Soft Skills -->
         <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-accentBlue flex items-center gap-2"><i class="fa-solid fa-users"></i> Soft Skills</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300">
-                <h4 class="font-bold text-white text-sm sm:text-base">Koordinasi Tim</h4>
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 h-full flex flex-col justify-center">
+                <h4 class="font-bold text-black dark:text-white text-sm sm:text-base">Koordinasi Tim</h4>
             </div>
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300">
-                <h4 class="font-bold text-white text-sm sm:text-base">Pemecahan Masalah</h4>
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 h-full flex flex-col justify-center">
+                <h4 class="font-bold text-black dark:text-white text-sm sm:text-base">Pemecahan Masalah</h4>
             </div>
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300">
-                <h4 class="font-bold text-white text-sm sm:text-base">Inisiatif & Mandiri</h4>
+            <div data-aos="fade-up" data-tilt data-tilt-max="15" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 h-full flex flex-col justify-center">
+                <h4 class="font-bold text-black dark:text-white text-sm sm:text-base">Inisiatif & Mandiri</h4>
             </div>
-            <div class="p-4 sm:p-6 rounded-2xl bg-cardBg section-glow text-center hover:scale-105 duration-300">
-                <h4 class="font-bold text-white text-sm sm:text-base">Perhatian terhadap Detail</h4>
+            <div class="p-4 sm:p-6 rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-md card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none text-center hover:scale-105 duration-300 h-full flex flex-col justify-center">
+                <h4 class="font-bold text-black dark:text-white text-sm sm:text-base">Perhatian terhadap Detail</h4>
             </div>
         </div>
     </section>
 
-    <!-- 4. PROJECT WEBSITE SECTION -->
-    <section id="project" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
-        <div class="text-center space-y-2 sm:space-y-3 mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Web <span class="text-accentBlue">Projects</span></h2>
-            <p class="text-gray-400 text-sm sm:text-base">Proyek aplikasi web yang telah dirancang dan dikembangkan</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
-            <!-- Project 1 -->
-            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
-                <div class="h-48 sm:h-60 bg-gradient-to-r from-deepBlue to-accentBlue flex items-center justify-center text-white text-xl sm:text-3xl font-black text-center p-4">
-                    D_Pict Portofolio Web
-                </div>
-                <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-3 sm:space-y-4">
-                    <h3 class="text-xl sm:text-2xl font-bold text-white">D_Pict Portofolio Utama</h3>
-                    <p class="text-gray-300 text-xs sm:text-sm flex-grow leading-relaxed">Website portofolio pribadi interaktif berfitur lengkap yang menampilkan profil mahasiswa, galeri foto, galeri video, dan sertifikasi.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">HTML5</span>
-                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">Tailwind CSS</span>
-                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">JavaScript</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 2 -->
-            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
-                <div class="h-48 sm:h-60 bg-gradient-to-r from-blue-900 to-deepBlue flex items-center justify-center text-white text-xl sm:text-3xl font-black text-center p-4">
-                    CI4 & MySQL System
-                </div>
-                <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-3 sm:space-y-4">
-                    <h3 class="text-xl sm:text-2xl font-bold text-white">Sistem Informasi Manajemen Data</h3>
-                    <p class="text-gray-300 text-xs sm:text-sm flex-grow leading-relaxed">Aplikasi web dinamis berbasis CodeIgniter 4 dan MySQL untuk manajemen data terintegrasi, autentikasi aman, dan performa optimal.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">PHP</span>
-                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">CodeIgniter 4</span>
-                        <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue text-xs rounded-full font-semibold">MySQL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- 5. GALERI FOTOGRAFI SECTION -->
-    <section id="galeri" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+    <section id="galeri" class="py-12 sm:py-16 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-8 sm:mb-16">
         <div class="text-center space-y-2 sm:space-y-3 mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Galeri <span class="text-accentBlue">Fotografi</span></h2>
-            <p class="text-gray-400 text-sm sm:text-base">Scan QR Code atau klik kartu untuk melihat postingan Instagram</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Photography <span class="text-accentBlue">Gallery</span></h2>
+            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Scan the QR Code or click the card to view the Instagram post</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             
             <!-- QR Code 1 -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
+            <div data-aos="fade-up" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between h-full">
                 <a href="https://www.instagram.com/p/DGCPcF8z7ME/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
                     <img src="img/qr/qr-1.png.png" alt="QR Code Galeri 1" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #1</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-white mt-1 mb-3">11 Februari 2025</h4>
+                    <h4 class="font-bold text-xs sm:text-sm text-black dark:text-white mt-1 mb-3">11 Februari 2025</h4>
                 </div>
-                <a href="https://www.instagram.com/p/DGCPcF8z7ME/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
+                <a href="https://www.instagram.com/p/DGCPcF8z7ME/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-black dark:text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
                     Buka Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
             <!-- QR Code 2 -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
+            <div data-aos="fade-up" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between h-full">
                 <a href="https://www.instagram.com/p/DF1k57CTv3e/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
                     <img src="img/qr/qr-2.png.png" alt="QR Code Galeri 2" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #2</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-white mt-1 mb-3">15 Februari 2025</h4>
+                    <h4 class="font-bold text-xs sm:text-sm text-black dark:text-white mt-1 mb-3">15 Februari 2025</h4>
                 </div>
-                <a href="https://www.instagram.com/p/DF1k57CTv3e/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
+                <a href="https://www.instagram.com/p/DF1k57CTv3e/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-black dark:text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
                     Buka Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
             <!-- QR Code 3 -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
+            <div data-aos="fade-up" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between h-full">
                 <a href="https://www.instagram.com/p/DGxC3kXpIZ6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
                     <img src="img/qr/qr-3.png.png" alt="QR Code Galeri 3" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #3</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-white mt-1 mb-3">18 Februari 2025</h4>
+                    <h4 class="font-bold text-xs sm:text-sm text-black dark:text-white mt-1 mb-3">18 Februari 2025</h4>
                 </div>
-                <a href="https://www.instagram.com/p/DGxC3kXpIZ6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
+                <a href="https://www.instagram.com/p/DGxC3kXpIZ6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-black dark:text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
                     Buka Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
             <!-- QR Code 4 -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
+            <div data-aos="fade-up" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between h-full">
                 <a href="https://www.instagram.com/p/DG0byhKTho1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
                     <img src="img/qr/qr-4.png.png" alt="QR Code Galeri 4" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #4</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-white mt-1 mb-3">1 Maret 2025</h4>
+                    <h4 class="font-bold text-xs sm:text-sm text-black dark:text-white mt-1 mb-3">1 Maret 2025</h4>
                 </div>
-                <a href="https://www.instagram.com/p/DG0byhKTho1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
+                <a href="https://www.instagram.com/p/DG0byhKTho1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-black dark:text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
                     Buka Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
             <!-- QR Code 5 -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
+            <div data-aos="fade-up" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between h-full">
                 <a href="https://www.instagram.com/p/DGo9hjgTSQj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
                     <img src="img/qr/qr-5.png.png" alt="QR Code Galeri 5" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #5</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-white mt-1 mb-3">4 Maret 2025</h4>
+                    <h4 class="font-bold text-xs sm:text-sm text-black dark:text-white mt-1 mb-3">4 Maret 2025</h4>
                 </div>
-                <a href="https://www.instagram.com/p/DGo9hjgTSQj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
+                <a href="https://www.instagram.com/p/DGo9hjgTSQj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-black dark:text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
                     Buka Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
             <!-- QR Code 6 -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
+            <div data-aos="fade-up" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between h-full">
                 <a href="https://www.instagram.com/p/DGMN8jezj4T/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
                     <img src="img/qr/qr-6.png.png" alt="QR Code Galeri 6" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #6</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-white mt-1 mb-3">9 Februari 2025</h4>
+                    <h4 class="font-bold text-xs sm:text-sm text-black dark:text-white mt-1 mb-3">9 Februari 2025</h4>
                 </div>
-                <a href="https://www.instagram.com/p/DGMN8jezj4T/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
+                <a href="https://www.instagram.com/p/DGMN8jezj4T/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-black dark:text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
                     Buka Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
             <!-- QR Code 7 -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
+            <div data-aos="fade-up" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between h-full">
                 <a href="https://www.instagram.com/p/DGGESvmTqT9/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
                     <img src="img/qr/qr-7.png.png" alt="QR Code Galeri 7" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #7</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-white mt-1 mb-3">14 Februari 2025</h4>
+                    <h4 class="font-bold text-xs sm:text-sm text-black dark:text-white mt-1 mb-3">14 Februari 2025</h4>
                 </div>
-                <a href="https://www.instagram.com/p/DGGESvmTqT9/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
+                <a href="https://www.instagram.com/p/DGGESvmTqT9/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-black dark:text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
                     Buka Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
             <!-- QR Code 8 -->
-            <div class="rounded-2xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between">
+            <div data-aos="fade-up" data-tilt data-tilt-max="8" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-2xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col p-4 sm:p-5 justify-between h-full">
                 <a href="https://www.instagram.com/p/DF69ffFTqwn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="block group overflow-hidden rounded-xl mb-4 bg-white p-2">
                     <img src="img/qr/qr-8.png.png" alt="QR Code Galeri 8" class="w-full h-40 sm:h-44 object-contain group-hover:scale-105 transition duration-300">
                 </a>
                 <div>
                     <span class="text-xs text-accentBlue font-semibold uppercase tracking-wider">Galeri #8</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-white mt-1 mb-3">18 Februari 2025 (2)</h4>
+                    <h4 class="font-bold text-xs sm:text-sm text-black dark:text-white mt-1 mb-3">18 Februari 2025 (2)</h4>
                 </div>
-                <a href="https://www.instagram.com/p/DF69ffFTqwn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
+                <a href="https://www.instagram.com/p/DF69ffFTqwn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="w-full py-2.5 rounded-xl bg-accentBlue text-black dark:text-white text-xs font-semibold text-center hover:bg-deepBlue transition flex items-center justify-center gap-1.5 shadow-lg shadow-accentBlue/20">
                     Buka Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
@@ -386,68 +408,68 @@
     </section>
 
     <!-- 6. VIDEO PROJECT / TUGAS SECTION -->
-    <section id="video" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+    <section id="video" class="py-12 sm:py-16 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-8 sm:mb-16">
         <div class="text-center space-y-2 sm:space-y-3 mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Video <span class="text-accentBlue">Project & Tugas</span></h2>
-            <p class="text-gray-400 text-sm sm:text-base">Kumpulan 5 video dokumentasi tugas akademik, presentasi, dan media sosial</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Video <span class="text-accentBlue">Projects & Assignments</span></h2>
+            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">A collection of documentation videos for academic assignments, presentations, and social media</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <!-- Video 1 (Facebook) -->
-            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
+            <div data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col h-full">
                 <div class="h-44 sm:h-48 bg-blue-900/40 flex items-center justify-center relative">
-                    <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accentBlue text-white flex items-center justify-center text-lg sm:text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
+                    <a href="https://www.facebook.com/share/v/1AJ2gDzhnS/" target="_blank" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accentBlue text-black dark:text-white flex items-center justify-center text-lg sm:text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
                         <i class="fa-solid fa-play ml-1"></i>
                     </a>
                 </div>
                 <div class="p-5 sm:p-6">
                     <span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-accentBlue font-semibold">Facebook Video</span>
-                    <h4 class="font-bold text-sm sm:text-base mt-2 text-white">Dokumentasi Acara & Creative Visual</h4>
+                    <h4 class="font-bold text-sm sm:text-base mt-2 text-black dark:text-white">Dokumentasi Acara & Creative Visual</h4>
                 </div>
             </div>
             <!-- Video 2 (YouTube) -->
-            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
+            <div data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col h-full">
                 <div class="h-44 sm:h-48 bg-cover bg-center relative" style="background-image: url('https://img.youtube.com/vi/FeHkgPk-YIg/hqdefault.jpg');">
                     <a href="https://www.youtube.com/watch?v=FeHkgPk-YIg&t=1s" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/40">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accentBlue text-white flex items-center justify-center text-lg sm:text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accentBlue text-black dark:text-white flex items-center justify-center text-lg sm:text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
                             <i class="fa-solid fa-play ml-1"></i>
                         </div>
                     </a>
                 </div>
                 <div class="p-5 sm:p-6">
                     <span class="text-xs px-2.5 py-1 rounded-full bg-red-500/10 text-red-400 font-semibold">YouTube Video</span>
-                    <h4 class="font-bold text-sm sm:text-base mt-2 text-white">Mengenal Ransomware & Tips Phishing</h4>
+                    <h4 class="font-bold text-sm sm:text-base mt-2 text-black dark:text-white">Mengenal Ransomware & Tips Phishing</h4>
                 </div>
             </div>
             <!-- Video 3 (YouTube) -->
-            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
+            <div data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col h-full">
                 <div class="h-44 sm:h-48 bg-cover bg-center relative" style="background-image: url('https://img.youtube.com/vi/5EkjGZDtP0A/hqdefault.jpg');">
                     <a href="https://www.youtube.com/watch?v=5EkjGZDtP0A" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/40">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accentBlue text-white flex items-center justify-center text-lg sm:text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accentBlue text-black dark:text-white flex items-center justify-center text-lg sm:text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
                             <i class="fa-solid fa-play ml-1"></i>
                         </div>
                     </a>
                 </div>
                 <div class="p-5 sm:p-6">
                     <span class="text-xs px-2.5 py-1 rounded-full bg-red-500/10 text-red-400 font-semibold">YouTube Video</span>
-                    <h4 class="font-bold text-sm sm:text-base mt-2 text-white">Nyari Makan di Jakarta! | Tanya Arah Warteg</h4>
+                    <h4 class="font-bold text-sm sm:text-base mt-2 text-black dark:text-white">Nyari Makan di Jakarta! | Tanya Arah Warteg</h4>
                 </div>
             </div>
             <!-- Video 4 (YouTube) -->
-            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col">
+            <div data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col h-full">
                 <div class="h-44 sm:h-48 bg-cover bg-center relative" style="background-image: url('https://img.youtube.com/vi/oKOVpGQxusU/hqdefault.jpg');">
                     <a href="https://www.youtube.com/watch?v=oKOVpGQxusU" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/40">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accentBlue text-white flex items-center justify-center text-lg sm:text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accentBlue text-black dark:text-white flex items-center justify-center text-lg sm:text-xl shadow-lg shadow-accentBlue/40 hover:scale-110 transition">
                             <i class="fa-solid fa-play ml-1"></i>
                         </div>
                     </a>
                 </div>
                 <div class="p-5 sm:p-6">
                     <span class="text-xs px-2.5 py-1 rounded-full bg-red-500/10 text-red-400 font-semibold">YouTube Video</span>
-                    <h4 class="font-bold text-sm sm:text-base mt-2 text-white">Tugas UAS - Rekayasa Instalasi Jaringan Kelompok 1</h4>
+                    <h4 class="font-bold text-sm sm:text-base mt-2 text-black dark:text-white">Tugas UAS - Rekayasa Instalasi Jaringan Kelompok 1</h4>
                 </div>
             </div>
             <!-- Video 5 (YouTube Tambahan) -->
-            <div class="rounded-3xl bg-cardBg section-glow overflow-hidden hover:scale-105 duration-300 flex flex-col md:col-span-2 shadow-xl border border-white/5">
+            <div data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2" class="rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none overflow-hidden hover:scale-105 duration-300 flex flex-col md:col-span-2 shadow-xl h-full">
                 <div class="h-44 sm:h-64 bg-gradient-to-r from-deepBlue to-accentBlue flex items-center justify-center relative">
                     <a href="https://www.youtube.com/watch?v=00JMeaQ5FbI" target="_blank" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white text-accentBlue flex items-center justify-center text-xl sm:text-2xl shadow-xl hover:scale-110 transition z-10">
                         <i class="fa-solid fa-play ml-1"></i>
@@ -455,111 +477,111 @@
                 </div>
                 <div class="p-5 sm:p-6">
                     <span class="text-xs px-2.5 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold">Dokumentasi Tambahan</span>
-                    <h4 class="font-bold text-base sm:text-lg mt-2 text-white">English project find and talking foreigner</h4>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-1">Video dokumentasi wawancara dengan turis asing di Kota Tua.</p>
+                    <h4 class="font-bold text-base sm:text-lg mt-2 text-black dark:text-white">English project find and talking foreigner</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-1">Video dokumentasi wawancara dengan turis asing di Kota Tua.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 7. SERTIFIKASI SECTION -->
-    <section id="sertifikasi" class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-16 sm:mb-28">
+    <section id="sertifikasi" class="py-12 sm:py-16 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-8 sm:mb-16">
         <div class="text-center space-y-2 sm:space-y-3 mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Sertifikasi & <span class="text-accentBlue">Kompetensi</span></h2>
-            <p class="text-gray-400 text-sm sm:text-base">Klik gambar sertifikat untuk melihat detail tampilan penuh</p>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Certifications & <span class="text-accentBlue">Competencies</span></h2>
+            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Click the certificate image to view the full details</p>
         </div>
         <div class="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
             <!-- Sertifikat 1 -->
-            <div class="p-5 sm:p-6 rounded-3xl bg-cardBg section-glow hover:scale-105 duration-300 flex flex-col space-y-4">
+            <div data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-5 sm:p-6 rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none hover:scale-105 duration-300 flex flex-col space-y-4 h-full">
                 <a href="detail-sertif.html?id=database-administrator" class="block h-48 sm:h-56 rounded-2xl bg-gradient-to-br from-blue-900 via-deepBlue to-cardBg flex items-center justify-center text-center p-6 border border-accentBlue/30 group overflow-hidden relative">
                     <div class="absolute inset-0 bg-accentBlue/20 opacity-0 group-hover:opacity-100 transition"></div>
                     <div class="relative z-10">
                         <i class="fa-solid fa-database text-4xl sm:text-5xl text-accentBlue mb-3"></i>
-                        <h4 class="text-white font-bold text-base sm:text-lg">Database Administrator</h4>
+                        <h4 class="text-black dark:text-white font-bold text-base sm:text-lg">Database Administrator</h4>
                         <span class="text-xs text-accentBlue mt-2 inline-block underline">Klik untuk melihat detail sertifikat</span>
                     </div>
                 </a>
                 <div>
-                    <h3 class="font-bold text-lg sm:text-xl text-white">Database Administrator</h3>
-                    <p class="text-xs sm:text-sm text-gray-300 mt-1 leading-relaxed">Sertifikasi keahlian dalam perancangan skema relasional, optimasi query SQL, serta manajemen basis data tingkat lanjut.</p>
+                    <h3 class="font-bold text-lg sm:text-xl text-black dark:text-white">Database Administrator</h3>
+                    <p class="text-xs sm:text-sm text-black dark:text-white mt-1 leading-relaxed">Sertifikasi keahlian dalam perancangan skema relasional, optimasi query SQL, serta manajemen basis data tingkat lanjut.</p>
                 </div>
             </div>
             <!-- Sertifikat 2 -->
-            <div class="p-5 sm:p-6 rounded-3xl bg-cardBg section-glow hover:scale-105 duration-300 flex flex-col space-y-4">
+            <div data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare="true" data-tilt-max-glare="0.2" class="p-5 sm:p-6 rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none hover:scale-105 duration-300 flex flex-col space-y-4 h-full">
                 <a href="detail-sertif.html?id=tok-komputer" class="block h-48 sm:h-56 rounded-2xl bg-gradient-to-br from-deepBlue via-blue-900 to-cardBg flex items-center justify-center text-center p-6 border border-accentBlue/30 group overflow-hidden relative">
                     <div class="absolute inset-0 bg-accentBlue/20 opacity-0 group-hover:opacity-100 transition"></div>
                     <div class="relative z-10">
                         <i class="fa-solid fa-certificate text-4xl sm:text-5xl text-accentBlue mb-3"></i>
-                        <h4 class="text-white font-bold text-base sm:text-lg">TOK (Teknik Operator Komputer)</h4>
+                        <h4 class="text-black dark:text-white font-bold text-base sm:text-lg">TOK (Teknik Operator Komputer)</h4>
                         <span class="text-xs text-accentBlue mt-2 inline-block underline">Klik untuk melihat detail sertifikat</span>
                     </div>
                 </a>
                 <div>
-                    <h3 class="font-bold text-lg sm:text-xl text-white">TOK (Teknik Operator Komputer)</h3>
-                    <p class="text-xs sm:text-sm text-gray-300 mt-1 leading-relaxed">Sertifikasi kompetensi operasional sistem komputer perkantoran, manajemen sistem, dan produktivitas digital.</p>
+                    <h3 class="font-bold text-lg sm:text-xl text-black dark:text-white">TOK (Teknik Operator Komputer)</h3>
+                    <p class="text-xs sm:text-sm text-black dark:text-white mt-1 leading-relaxed">Sertifikasi kompetensi operasional sistem komputer perkantoran, manajemen sistem, dan produktivitas digital.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 8. WORK EXPERIENCE & ORGANIZATIONAL EXPERIENCE SECTION -->
-    <section id="pengalaman" class="py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto relative z-10 mb-16 sm:mb-28">
+    <section id="pengalaman" class="py-12 sm:py-16 px-4 sm:px-6 max-w-4xl mx-auto relative z-10 mb-8 sm:mb-16">
         <div class="text-center space-y-2 sm:space-y-3 mb-12 sm:mb-16">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">Work & <span class="text-accentBlue">Organization</span></h2>
-            <p class="text-gray-400 text-sm sm:text-base">Riwayat pengalaman kerja profesional dan organisasi kampus</p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">History of professional work experience and campus organizations</p>
         </div>
 
         <div class="space-y-6 sm:space-y-8">
             <!-- Work 1 -->
-            <div class="p-6 sm:p-8 rounded-3xl bg-cardBg section-glow relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
+            <div data-aos="fade-up" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.1" class="p-6 sm:p-8 rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
                 <div class="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-accentBlue rounded-l-3xl"></div>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2 sm:mb-3 gap-1">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">Bnp Media Printing, Design</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-black dark:text-white">Bnp Media Printing, Design</h3>
                     <span class="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold w-fit">Jan 2017 - Feb 2018</span>
                 </div>
-                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">Menangani bidang desain grafis, tata letak cetak media, serta operasional percetakan digital dan produksi media promosi.</p>
+                <p class="text-black dark:text-white text-xs sm:text-sm leading-relaxed">Menangani bidang desain grafis, tata letak cetak media, serta operasional percetakan digital dan produksi media promosi.</p>
             </div>
             <!-- Work 2 -->
-            <div class="p-6 sm:p-8 rounded-3xl bg-cardBg section-glow relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
+            <div data-aos="fade-up" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.1" class="p-6 sm:p-8 rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
                 <div class="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-deepBlue rounded-l-3xl"></div>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2 sm:mb-3 gap-1">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">PT. Sinar Jaya Prakarsa, Roll Produksi</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-black dark:text-white">PT. Sinar Jaya Prakarsa, Roll Produksi</h3>
                     <span class="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold w-fit">Apr 2020 - Jul 2024</span>
                 </div>
-                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">Bertanggung jawab pada bagian divisi roll produksi, memastikan kelancaran alur operasional, kontrol kualitas, dan efisiensi lini produksi industri.</p>
+                <p class="text-black dark:text-white text-xs sm:text-sm leading-relaxed">Bertanggung jawab pada bagian divisi roll produksi, memastikan kelancaran alur operasional, kontrol kualitas, dan efisiensi lini produksi industri.</p>
             </div>
             <!-- Organization -->
-            <div class="p-6 sm:p-8 rounded-3xl bg-cardBg section-glow relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
+            <div data-aos="fade-up" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.1" class="p-6 sm:p-8 rounded-3xl bg-white/90 dark:bg-cardBg/60 shadow-lg shadow-blue-500/10 backdrop-blur-lg card-bg border border-blue-200 dark:border-white/5 section-glow shadow-xl shadow-blue-900/10 dark:shadow-none relative pl-8 sm:pl-12 hover:scale-[1.02] duration-300">
                 <div class="absolute left-0 top-0 bottom-0 w-2.5 sm:w-3 bg-blue-500 rounded-l-3xl"></div>
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-2 sm:mb-3 gap-1">
-                    <h3 class="text-lg sm:text-xl font-bold text-white">Organisasi: UKM Timekovi</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-black dark:text-white">Organisasi: UKM Timekovi</h3>
                     <span class="text-[11px] sm:text-xs px-3 py-1 rounded-full bg-accentBlue/10 text-accentBlue font-semibold w-fit">2024 - 2026</span>
                 </div>
-                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">Anggota aktif UKM Timekovi, berpartisipasi dalam berbagai kegiatan kolaboratif, pengembangan minat bakat, dan kepemimpinan.</p>
+                <p class="text-black dark:text-white text-xs sm:text-sm leading-relaxed">Anggota aktif UKM Timekovi, berpartisipasi dalam berbagai kegiatan kolaboratif, pengembangan minat bakat, dan kepemimpinan.</p>
             </div>
         </div>
     </section>
 
     <!-- 9. FOOTER & KONTAK SECTION -->
-    <footer class="bg-[#030508] border-t border-gray-800 text-gray-400 py-12 sm:py-16 px-4 sm:px-6 relative z-10">
+    <footer class="bg-gray-100 dark:bg-[#030508] border-t border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 py-12 sm:py-16 px-4 sm:px-6 relative z-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-start">
             <div class="space-y-3">
-                <span class="text-2xl font-black tracking-wider text-white">D_PICT<span class="text-accentBlue">.</span></span>
+                <span class="text-2xl font-black tracking-wider text-black dark:text-white">D_PICT<span class="text-accentBlue">.</span></span>
                 <p class="text-xs sm:text-sm">Portofolio Klaudius Oe Naimnou. Dibuat dengan desain Tailwind CSS.</p>
             </div>
             <div class="space-y-2 sm:space-y-3 text-xs sm:text-sm">
-                <h4 class="text-white font-bold mb-2">Informasi Kontak</h4>
+                <h4 class="text-black dark:text-white font-bold mb-2">Contact Information</h4>
                 <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-accentBlue"></i> 0812-9502-2846</p>
                 <p class="flex items-center gap-2 break-all"><i class="fa-solid fa-envelope text-accentBlue"></i> dekuizuku@gmail.com</p>
             </div>
             <div class="space-y-3">
-                <h4 class="text-white font-bold text-xs sm:text-sm">Sosial Media</h4>
+                <h4 class="text-black dark:text-white font-bold text-xs sm:text-sm">Social Media</h4>
                 <div class="flex space-x-3 sm:space-x-4">
-                    <a href="https://www.facebook.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition hover:scale-110"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition hover:scale-110"><i class="fa-brands fa-instagram text-sm"></i></a>
-                    <a href="https://www.youtube.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition hover:scale-110"><i class="fa-brands fa-youtube text-sm"></i></a>
-                    <a href="https://twitter.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBlue hover:text-white transition hover:scale-110"><i class="fa-brands fa-twitter text-sm"></i></a>
-                    <a href="https://www.linkedin.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-cardBg border border-gray-800 flex items-center justify-center text-gray-300 hover:bg-accentBase hover:text-white transition hover:scale-110"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-100 dark:bg-[#1e293b] border border-gray-300 dark:border-gray-600 flex items-center justify-center text-black dark:text-white hover:bg-accentBlue hover:text-black dark:hover:text-white transition hover:scale-110"><svg class="w-4 h-4 fill-current" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-100 dark:bg-[#1e293b] border border-gray-300 dark:border-gray-600 flex items-center justify-center text-black dark:text-white hover:bg-accentBlue hover:text-black dark:hover:text-white transition hover:scale-110"><svg class="w-4 h-4 fill-current" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                    <a href="https://www.youtube.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-100 dark:bg-[#1e293b] border border-gray-300 dark:border-gray-600 flex items-center justify-center text-black dark:text-white hover:bg-accentBlue hover:text-black dark:hover:text-white transition hover:scale-110"><i class="fa-brands fa-youtube text-sm"></i></a>
+                    <a href="https://twitter.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-100 dark:bg-[#1e293b] border border-gray-300 dark:border-gray-600 flex items-center justify-center text-black dark:text-white hover:bg-accentBlue hover:text-black dark:hover:text-white transition hover:scale-110"><svg class="w-4 h-4 fill-current" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-100 dark:bg-[#1e293b] border border-gray-300 dark:border-gray-600 flex items-center justify-center text-black dark:text-white hover:bg-accentBase hover:text-black dark:hover:text-white transition hover:scale-110"><svg class="w-4 h-4 fill-current" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 01107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
                 </div>
             </div>
         </div>
@@ -568,5 +590,78 @@
         </div>
     </footer>
 
+    <!-- Script Animasi Navbar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Toggle Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-white/90', 'dark:bg-darkBg/90', 'backdrop-blur-xl', 'shadow-lg');
+                navbar.classList.remove('bg-white/70', 'dark:bg-darkBg/50', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.add('bg-white/70', 'dark:bg-darkBg/50', 'backdrop-blur-sm');
+                navbar.classList.remove('bg-white/90', 'dark:bg-darkBg/90', 'backdrop-blur-xl', 'shadow-lg');
+            }
+        });
+    
+        // Theme Toggle Logic
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleDarkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+        const themeToggleLightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon?.classList.remove('hidden');
+            themeToggleLightIconMobile?.classList.remove('hidden');
+            document.documentElement.classList.add('dark');
+        } else {
+            themeToggleDarkIcon?.classList.remove('hidden');
+            themeToggleDarkIconMobile?.classList.remove('hidden');
+            document.documentElement.classList.remove('dark');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+
+        
+        function toggleTheme() {
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        }
+        themeToggleBtn?.addEventListener('click', toggleTheme);
+        themeToggleBtnMobile?.addEventListener('click', toggleTheme);
+    </script>
 </body>
 </html>
